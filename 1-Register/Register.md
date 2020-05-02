@@ -32,3 +32,9 @@
 5. 在  **Callback URL** 裡面輸入 `http://localhost:3000/api/forge/callback/oauth` （**在本次練習裡面用不到**）
 
 ![alt CREATE APP](img/create_app.gif)
+
+## 說明影片
+
+[![](http://img.youtube.com/vi/nStqkcQbHY0/0.jpg)](http://www.youtube.com/watch?v=nStqkcQbHY0 "1-Forge dev account registration")
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nStqkcQbHY0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
