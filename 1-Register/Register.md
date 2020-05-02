@@ -36,5 +36,3 @@
 ## 說明影片
 
 [![](http://img.youtube.com/vi/nStqkcQbHY0/0.jpg)](http://www.youtube.com/watch?v=nStqkcQbHY0 "1-Forge dev account registration")
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nStqkcQbHY0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
