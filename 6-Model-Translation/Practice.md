@@ -23,8 +23,8 @@
 
  - [章節講議](README.md)
  - 使用到的 Forge APIs
-    - https://forge.autodesk.com/en/docs/model-derivative/v2/reference/http/job-POST/
-    - https://forge.autodesk.com/en/docs/model-derivative/v2/reference/http/urn-manifest-GET/
+    - [https://forge.autodesk.com/en/docs/model-derivative/v2/reference/http/job-POST/](https://forge.autodesk.com/en/docs/model-derivative/v2/reference/http/job-POST/)
+    - [https://forge.autodesk.com/en/docs/model-derivative/v2/reference/http/urn-manifest-GET/](https://forge.autodesk.com/en/docs/model-derivative/v2/reference/http/urn-manifest-GET/)
 
 <br/>
 
