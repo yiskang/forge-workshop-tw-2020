@@ -6,6 +6,12 @@
 
 ## 活動議程
 
+<style>
+	ul {
+		padding: 0;
+	}
+</style>
+
 #### Day1
 <table width="604">
 	<tbody>
@@ -27,7 +33,7 @@
 			<td width="293">
 				<p>章節一：</p>
 				<p>l&nbsp;&nbsp; 活動開場、簡介</p>
-				<p>l&nbsp;&nbsp; Forge 開發者帳號建立及註冊</p>
+				<p>l&nbsp;&nbsp; [Forge 開發者帳號建立及註冊](1-Register/Register.md)</p>
 			</td>
 			<td width="189">
 				<p>講師簡報導說</p>
@@ -41,7 +47,11 @@
 				<p>章節一自我學習</p>
 			</td>
 			<td width="189">
-				<p>提供文件自學及隨時Slack發問</p>
+				<ul>
+					<li>提供示範影面自學</li>
+					<li>隨時Slack發問</li>
+					<li>需要時可Zoom視訊答疑</li>
+				</ul>
 			</td>
 		</tr>
 		<tr>
@@ -52,7 +62,7 @@
 				<p>章節一答疑</p>
 			</td>
 			<td width="189">
-				<p>Zoom Webinar答疑</p>
+				<p>Zoom答疑</p>
 			</td>
 		</tr>
 		<tr>
@@ -76,7 +86,11 @@
 				<p>章節二自我學習</p>
 			</td>
 			<td width="189">
-				<p>提供示範影面自學及隨時Slack發問</p>
+				<ul>
+					<li>提供示範影面自學</li>
+					<li>隨時Slack發問</li>
+					<li>需要時可Zoom視訊答疑</li>
+				</ul>
 			</td>
 		</tr>
 		<tr>
@@ -87,7 +101,7 @@
 				<p>章節二答疑</p>
 			</td>
 			<td width="189">
-				<p>Zoom Webinar答疑</p>
+				<p>Zoom答疑</p>
 			</td>
 		</tr>
 		<tr>
@@ -122,7 +136,11 @@
 				<p>章節三自我學習</p>
 			</td>
 			<td width="189">
-				<p>提供示範影面自學及隨時Slack發問</p>
+				<ul>
+					<li>提供示範影面自學</li>
+					<li>隨時Slack發問</li>
+					<li>需要時可Zoom視訊答疑</li>
+				</ul>
 			</td>
 		</tr>
 		<tr>
@@ -133,7 +151,7 @@
 				<p>章節三答疑</p>
 			</td>
 			<td width="189">
-				<p>Zoom Webinar答疑</p>
+				<p>Zoom答疑</p>
 			</td>
 		</tr>
 		<tr>
@@ -169,7 +187,7 @@
 				<p>章節四答疑</p>
 			</td>
 			<td width="189">
-				<p>Zoom Webinar答疑</p>
+				<p>Zoom答疑</p>
 			</td>
 		</tr>
 		<tr>
@@ -193,7 +211,11 @@
 				<p>章節五自我學習</p>
 			</td>
 			<td width="189">
-				<p>提供示範影面自學及隨時Slack發問</p>
+				<ul>
+					<li>提供示範影面自學</li>
+					<li>隨時Slack發問</li>
+					<li>需要時可Zoom視訊答疑</li>
+				</ul>
 			</td>
 		</tr>
 		<tr>
@@ -204,7 +226,7 @@
 				<p>章節五答疑</p>
 			</td>
 			<td width="189">
-				<p>Zoom Webinar答疑</p>
+				<p>Zoom答疑</p>
 			</td>
 		</tr>
 		<tr>
@@ -238,7 +260,11 @@
 				<p>章節六自我學習</p>
 			</td>
 			<td width="189">
-				<p>提供示範影面自學及隨時Slack發問</p>
+				<ul>
+					<li>提供示範影面自學</li>
+					<li>隨時Slack發問</li>
+					<li>需要時可Zoom視訊答疑</li>
+				</ul>
 			</td>
 		</tr>
 		<tr>
@@ -249,11 +275,12 @@
 				<p>章節六答疑</p>
 			</td>
 			<td width="189">
-				<p>Zoom Webinar答疑</p>
+				<p>Zoom答疑</p>
 			</td>
 		</tr>
 	</tbody>
 </table>
+
 
 
 #### Day 2
@@ -290,7 +317,11 @@
 				<p>章節七自我學習</p>
 			</td>
 			<td width="189">
-				<p>提供示範影面自學及隨時Slack發問</p>
+				<ul>
+					<li>提供示範影面自學</li>
+					<li>隨時Slack發問</li>
+					<li>需要時可Zoom視訊答疑</li>
+				</ul>
 			</td>
 		</tr>
 		<tr>
@@ -301,7 +332,7 @@
 				<p>章節七答疑</p>
 			</td>
 			<td width="189">
-				<p>Zoom Webinar答疑</p>
+				<p>Zoom答疑</p>
 			</td>
 		</tr>
 		<tr>
@@ -335,7 +366,7 @@
 				<p>章節八答疑</p>
 			</td>
 			<td width="189">
-				<p>Zoom Webinar答疑及隨時Slack發問</p>
+				<p>Zoom答疑</p>
 			</td>
 		</tr>
 		<tr>
@@ -344,6 +375,17 @@
 			</td>
 			<td width="293">
 				<p>中場休息</p>
+			</td>
+			<td width="189">
+				<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="123">
+				<p>14:00-17:00</p>
+			</td>
+			<td width="293">
+				<p>TBD</p>
 			</td>
 			<td width="189">
 				<p>-</p>

@@ -6,7 +6,7 @@
 
 ## 建立你的 Forge 帳號
 
-1. 使用網頁瀏覽器開啟 Autodesk Forge 官方網站 https://developer.autodesk.com/
+1. 使用網頁瀏覽器開啟 Autodesk Forge 官方網站 [https://developer.autodesk.com/](https://developer.autodesk.com/)
 2. 滑鼠點擊 SIGN UP 按鈕註冊新的帳號（已經有帳號的同學請直接進行步驟4）
 3. 註冊完成後到，所填寫的信箱收信，點擊信件裡的註冊驗證連結
 4. 滑鼠點擊 SIGN IN 登入，登入已註冊且驗證完成的開發者帳號

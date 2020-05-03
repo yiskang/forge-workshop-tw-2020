@@ -1,1 +1,11 @@
 theme: jekyll-theme-cayman
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - README.md
+  - 1-Register/Register.md
+  - 2-Setup/Setup.md
+  - 3-ForgeViewerBoiler/ForgeViewerBoiler.md
