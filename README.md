@@ -33,7 +33,7 @@
 			<td width="293">
 				<p>章節一：</p>
 				<p>l&nbsp;&nbsp; 活動開場、簡介</p>
-				<p>l&nbsp;&nbsp; <a href="1-Register/Register.md">Forge 開發者帳號建立及註冊</a></p>
+				<p>l&nbsp;&nbsp; <a href="1-Register/">Forge 開發者帳號建立及註冊</a></p>
 			</td>
 			<td width="189">
 				<p>講師簡報導說</p>
