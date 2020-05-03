@@ -4,12 +4,12 @@
 
 ## Learn Forge 練習樣版
 
-## Learn Forge 自主練習
+## 章節自主練習
 
 ### 練習目標
 
 
-## 說明影片
+### 示範及說明影片
 
 1. Learn Forge 範例簡介<br/>
 

@@ -8,7 +8,7 @@
 
 <style>
 	ul {
-		padding: 0;
+		padding: 15px;
 	}
 </style>
 
@@ -409,4 +409,4 @@
 
 2. 確保網路連線順暢、並可以存取：
    - Forge 相關網域，如https://forge.autodesk.com 及 https://developer.api.autodesk.com
-   - [Slack](https://slack.com/) 及 Zoom Webinar
+   - [Slack](https://slack.com/) 及 Zoom

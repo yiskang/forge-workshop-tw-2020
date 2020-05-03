@@ -7,5 +7,9 @@ relative_links:
 include:
   - README.md
   - 1-Register/README.md
-  - 2-Setup/Setup.md
-  - 3-ForgeViewerBoiler/ForgeViewerBoiler.md
+  - 2-Setup/README.md
+  - 3-ForgeViewerBoiler/README.md
+  - 4-OAuth-SDK/README.md
+  - 5-Bucket-Management/README.md
+  - 6-Model-Translation/README.md
+  - 7-View-Model/README.md
