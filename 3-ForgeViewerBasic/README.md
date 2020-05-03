@@ -96,7 +96,7 @@ Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https:
     });
     ```
 
-- 讀取模型視圖 Manifest（可載入的模型視圖）
+- 3.讀取模型視圖 Manifest（可載入的模型視圖）
 
   - ```javascript
     var documentId = 'urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6bGt3ZWo3eHBiZ3A2M3g0aGwzMzV5Nm0yNm9ha2dnb2YyMDE3MDUyOHQwMjQ3MzIzODZ6L3JhY19iYXNpY19zYW1wbGVfcHJvamVjdC5ydnQ';
@@ -115,7 +115,7 @@ Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https:
     }
     ```
 
-- 載入模型視圖（Viewable Bubble）
+- 4.載入模型視圖（Viewable Bubble）
 
   - ```javascript
     var defaultModel = viewerDocument.getRoot().getDefaultGeometry();
