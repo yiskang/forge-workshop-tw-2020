@@ -33,10 +33,10 @@
 			<td width="293">
 				<p>章節一：</p>
 				<p>l&nbsp;&nbsp; 活動開場、簡介</p>
-				<p>l&nbsp;&nbsp; <a href="1-Register">Forge 開發者帳號建立及註冊</a></p>
+				<p>l&nbsp;&nbsp; Forge 開發者帳號建立及註冊</p>
 			</td>
 			<td width="189">
-				<p>講師簡報導說</p>
+				<p>講師簡報導說(<a href="1-Register">講議連結</a>)</p>
 			</td>
 		</tr>
 		<tr>
@@ -48,7 +48,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影面自學</li>
+					<li>提供示範影面自學(<a href="1-Register">連結</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -75,7 +75,7 @@
 				<p>l&nbsp;&nbsp; Learn Forge開發專案基本設定</p>
 			</td>
 			<td width="189">
-				<p>講師簡報導說</p>
+				<p>講師簡報導說(<a href="2-Setup">講議連結</a>)</p>
 			</td>
 		</tr>
 		<tr>
@@ -87,7 +87,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影面自學</li>
+					<li>提供示範影面自學(<a href="2-Setup">連結</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -125,7 +125,7 @@
 				<p>l&nbsp;&nbsp; Forge Viewer基本功能介紹</p>
 			</td>
 			<td width="189">
-				<p>講師簡報導說</p>
+				<p>講師簡報導說(<a href="3-ForgeViewerBasic">講議連結</a>)</p>
 			</td>
 		</tr>
 		<tr>
@@ -137,7 +137,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影面自學</li>
+					<li>提供示範影面自學(<a href="3-ForgeViewerBasic">連結</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -176,7 +176,7 @@
 				<p>l&nbsp;&nbsp; Forge SDK簡介</p>
 			</td>
 			<td width="189">
-				<p>講師簡報導說</p>
+				<p>講師簡報導說(<a href="4-OAuth-SDK">講議連結</a>)</p>
 			</td>
 		</tr>
 		<tr>
@@ -200,7 +200,7 @@
 				<p>l&nbsp;&nbsp; (時間夠的話) 下載及刪除已上傳模型檔案</p>
 			</td>
 			<td width="189">
-				<p>講師簡報導說</p>
+				<p>講師簡報導說(<a href="5-Bucket-Management">講議連結</a>)</p>
 			</td>
 		</tr>
 		<tr>
@@ -212,7 +212,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影面自學</li>
+					<li>提供示範影面自學(<a href="5-Bucket-Management">連結</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -249,7 +249,7 @@
 				<p>l&nbsp;&nbsp; Forge Model Derivative - 模型轉檔</p>
 			</td>
 			<td width="189">
-				<p>講師簡報導說</p>
+				<p>講師簡報導說(<a href="6-Model-Translation">講議連結</a>)</p>
 			</td>
 		</tr>
 		<tr>
@@ -261,7 +261,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影面自學</li>
+					<li>提供示範影面自學(<a href="6-Model-Translation">連結</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -306,7 +306,7 @@
 				<p>l   Forge Viewer 實作</p>
 			</td>
 			<td width="189">
-				<p>講師簡報導說</p>
+				<p>講師簡報導說(<a href="7-View-Model">講議連結</a>)</p>
 			</td>
 		</tr>
 		<tr>
@@ -318,7 +318,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影面自學</li>
+					<li>提供示範影面自學(<a href="7-View-Model">連結</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
