@@ -6,6 +6,6 @@ relative_links:
   collections: true
 include:
   - README.md
-  - 1-Register/Index.md
+  - 1-Register/README.md
   - 2-Setup/Setup.md
   - 3-ForgeViewerBoiler/ForgeViewerBoiler.md
