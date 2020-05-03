@@ -133,7 +133,9 @@ Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https:
 - 2.Forge Viewer 模型量測
   - ![alt ForgeViewerMeasurement](img/forge-viewer-measurement.png)
 
+## 章節自主練習
 
+[點我進入練習](Practice.md)
 
 <br/>
 
