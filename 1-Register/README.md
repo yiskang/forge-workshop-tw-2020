@@ -33,10 +33,10 @@
 
 ![alt CREATE APP](img/create_app.gif)
 
+<a name="SectionPractice"></a>
 ## 章節自主練習
 
-### 練習目標
+[點我進入練習](Practice.md)
 
-### 示範及說明影片
-
-[![](http://img.youtube.com/vi/nStqkcQbHY0/0.jpg)](http://www.youtube.com/watch?v=nStqkcQbHY0 "1-Forge dev account registration")
+<br/>
+[回到首頁](../README.md)

@@ -48,7 +48,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影面自學(<a href="1-Register">連結</a>)</li>
+					<li>提供示範影面自學(<a href="1-Register/#章節自主練習">連結</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
