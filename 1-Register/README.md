@@ -33,7 +33,6 @@
 
 ![alt CREATE APP](img/create_app.gif)
 
-<a name="SectionPractice"></a>
 ## 章節自主練習
 
 [點我進入練習](Practice.md)
