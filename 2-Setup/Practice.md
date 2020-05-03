@@ -22,6 +22,8 @@
 ## 參考資料
 
  - [章節講議](README.md)
+ - Visual Studio (Windows) 設定環境變數的方法
+    - ![alt Visual Studio (Windows) 環境變數](img/env_vars.png)
 
 <br/>
 
