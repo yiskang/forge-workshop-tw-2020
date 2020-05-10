@@ -28,7 +28,7 @@
 
 ## Learn Forge 練習樣版
 
-本次活動將使用 [ASP.Net Core](https://zh.wikipedia.org/zh-tw/ASP.NET_Core) 這個技術進行相關的開發，並準備了 **Learn Forge .net Core 練習樣版** 讓為各位學員可以快速的上手，可以到 https://github.com/yiskang/learn-forge-webinar-sample 下載。
+本次活動將使用 [ASP.Net Core](https://zh.wikipedia.org/zh-tw/ASP.NET_Core) 這個技術進行相關的開發，並準備了 **Learn Forge .net Core 練習樣版** 讓為各位學員可以快速的上手，可以到 [https://github.com/yiskang/learn-forge-webinar-sample](https://github.com/yiskang/learn-forge-webinar-sample) 下載。
 
 
 

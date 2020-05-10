@@ -48,7 +48,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影面自學(<a href="1-Register/#章節自主練習">連結</a>)</li>
+					<li>提供示範影片自學(<a href="1-Register/#章節自主練習">連結</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -87,7 +87,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影面自學(<a href="2-Setup/#章節自主練習">連結</a>)</li>
+					<li>提供示範影片自學(<a href="2-Setup/#章節自主練習">連結</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -137,7 +137,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影面自學(<a href="3-ForgeViewerBasic/#章節自主練習">連結</a>)</li>
+					<li>提供示範影片自學(<a href="3-ForgeViewerBasic/#章節自主練習">連結</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -212,7 +212,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影面自學(<a href="5-Bucket-Management/#章節自主練習">連結</a>)</li>
+					<li>提供示範影片自學(<a href="5-Bucket-Management/#章節自主練習">連結</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -261,7 +261,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影面自學(<a href="6-Model-Translation/#章節自主練習">連結</a>)</li>
+					<li>提供示範影片自學(<a href="6-Model-Translation/#章節自主練習">連結</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -318,7 +318,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影面自學(<a href="7-View-Model/#章節自主練習">連結</a>)</li>
+					<li>提供示範影片自學(<a href="7-View-Model/#章節自主練習">連結</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
