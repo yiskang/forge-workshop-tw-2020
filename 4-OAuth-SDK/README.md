@@ -58,7 +58,7 @@ Autodesk Forge 亦透過 OAuth 來保護用戶存放在 Forge 平台上的模型
 
 ![](img/forge-oauth-workflow.png)
 
-**Note.** 想要了解上面內容的更多細節可以參考 Autodesk Forge 官網的 [API Basics](https://forge.autodesk.com/en/docs/oauth/v2/developers_guide/basics/)
+**Note.** 想要了解上面內容的更多細節可以參考 Autodesk Forge 官網的 [API Basics](https://forge.autodesk.com/en/docs/oauth/v2/developers_guide/basics/)
 
 ## Forge 服務簡介及使用示範
 
@@ -259,7 +259,7 @@ Model Derivative API 支援將近 60 餘種業界常見的模型格式、檔案�
 
 ### BIM360 API
 
-
+前面提到的 [Data Management API](#DataManagementAPI) 是用來管理模型檔案資料而存在的 API，而BIM360 API 是專門用來管理、存取 BIM360 管理平台資料存在的 API
 
 ### Design Automation API
 
@@ -278,12 +278,13 @@ Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https:
 
 // 根據 Work Flow 用 Curl 的方式舉例
 
-![alt Forge Work Flow-1](img/forge-work-flow-1.png)
-![alt Forge Work Flow-2](img/forge-work-flow-2.png)
+![alt Forge Viewer Work Flow](img/forge-viewer-workflow.png)
 
 ## Forge SDK 簡介
 
+![](img/forge-sdk-overview.png)
 
+[https://forge.autodesk.com/en/docs/quickstarts/v1/overview/](https://forge.autodesk.com/en/docs/quickstarts/v1/overview/)
 
 <br/>
 
