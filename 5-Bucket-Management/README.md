@@ -145,6 +145,17 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
         return await buckets.CreateBucketAsync(bucketPayload, "US");
     }
     ```
+- 注意事項
+
+  - Bucket 的命名規則需符合：`[-_.a-z0-9]{3,128}`
+
+  - Bucket 類型：會影響容器資料 (Object、上傳的檔案) 保存期限
+
+    - transient：檔案會在 24 小時後被自動刪除。
+
+    - temporary：檔案會在 bucket 保存 30 天，時間超過後會自動被刪除。
+
+    - persistent：檔案會永久保存在 bucket 內，直到使用者自行呼叫 [DELETE Object](https://forge.autodesk.com/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-:objectName-DELETE/) 端點來刪除該物件。
 
 ### 上傳物件 (模型檔案)
 

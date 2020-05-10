@@ -18,7 +18,7 @@ OAuth 目前最新的版本是 OAuth 2.0，並支援下面4種授權流程：
 
 ### Autodesk Forge OAuth 服務
 
-Autodesk Forge 亦透過 OAuth 來保護用戶存放在 Forge 平台上的模型資料及 Autodesk 雲產品 (例如 BIM360、A360、BIM360 Team等) 的數據資料，以及確保有授權的第三方應用程式、網站才可以上傳資料或檔案到 Forge 雲端服務平台上，同時依據使用場景分成下列兩種：
+Autodesk Forge 亦透過 OAuth 來保護用戶存放在 Forge 平台上的模型資料及 Autodesk 雲端產品 (例如 BIM360、A360、BIM360 Team、Fusion360 等) 的數據資料，以及確保有授權的第三方應用程式、網站才可以上傳資料或檔案到 Forge 雲端服務平台上，同時依據使用場景分成下列兩種：
 
 **兩條腿 (2-Legged Context):**
 
@@ -42,7 +42,7 @@ Autodesk Forge 亦透過 OAuth 來保護用戶存放在 Forge 平台上的模型
 
 **三條腿(2-Legged Context):**
 
-  這種授權場景裡，第三方應用程式需要導引用戶**登入他們的 Autodesk帳號**，此場景拿到的 Access Token 只可以用在標示 `user context required` 或 `user context optional` 的 Forge APIs上，其主要用來存取該帳號放在 Autodesk 雲產品 (例如 BIM360、A360、BIM360 Team、Fusion360 等) 上的數據資料，並可依據換取 Access Token 的方式分為下面兩種：
+  這種授權場景裡，第三方應用程式需要導引用戶**登入他們的 Autodesk帳號**，此場景拿到的 Access Token 只可以用在標示 `user context required` 或 `user context optional` 的 Forge APIs上，其主要用來存取該帳號放在 Autodesk 雲端產品 (例如 BIM360、A360、BIM360 Team、Fusion360 等) 上的數據資料，並可依據換取 Access Token 的方式分為下面兩種：
 
 - Authorization Code Grant Type Flow
 
@@ -52,35 +52,234 @@ Autodesk Forge 亦透過 OAuth 來保護用戶存放在 Forge 平台上的模型
 
   ![](https://developer.doc.autodesk.com/bPlouYTd/245/_images/implicit-3-legged-flow.png)
 
+
+
+**簡化的流程圖**
+
+![](img/forge-oauth-workflow.png)
+
 **Note.** 想要了解上面內容的更多細節可以參考 Autodesk Forge 官網的 [API Basics](https://forge.autodesk.com/en/docs/oauth/v2/developers_guide/basics/)
 
 ## Forge 服務簡介及使用示範
 
-// 根據 Work Flow 用 Curl 的方式舉例
-
-![alt Forge Work Flow-1](img/forge-work-flow-1.png)
-![alt Forge Work Flow-2](img/forge-work-flow-2.png)
-
 ### Data Management API
 
-- 
-- Bucket 的命名規則需符合：` [-_.a-z0-9]{3,128}`
-- Bucket 類型：會影響上傳到 Bucket 的物件（模型檔案）保存期限
-  - transient：檔案會在 24 小時後被自動刪除。
-  - temporary：檔案會在 bucket 保存 30 天，時間超過後會自動被刪除。
-  - persistent：檔案會永久保存在 bucket 內，直到使用者自行呼叫物件刪除 API 來刪除該物件。
+Data Management API 提供了一個統一的資料存取模式，用來存取 Autodesk 雲端產品 (例如 BIM360、A360、BIM360 Team、Fusion360 等) 上的資料，以及底層資料存儲服務（OSS，Object Storage Service），依 API 用途簡單分類為下面兩種：
+
+**Data Management API for BIM360:**
+
+主要用來存取 Autodesk 雲端產品 (例如 BIM360、A360、BIM360 Team、Fusion360 等) 上的資料，其功能有：
+
+- 專案存取
+
+  - 取得資料中樞 (Hub) 列表
+
+    ```bash
+    curl -v 'https://developer.api.autodesk.com/project/v1/hubs'
+    -H 'Authorization: Bearer AuIPTf4KYLTYGVnOHQ0cuolwCW2a'
+    ```
+
+  - 取得 Project 列表
+
+    ```bash
+    curl -v 'https://developer.api.autodesk.com/project/v1/hubs/b.b1bf0a85-12e7-4a69-b32f-8a57f4459ced/projects'
+    -H 'Authorization: Bearer AuIPTf4KYLTYGVnOHQ0cuolwCW2a'
+    ```
+
+- 資料夾、檔案版本和關聯檔案
+
+  - 取得上層資料夾
+
+    ```bash
+    curl -v 'https://developer.api.autodesk.com/project/v1/hubs/b.b1bf0a85-12e7-4a69-b32f-8a57f4459ced/projects/b.e65d4a5d-3a06-4162-92d7-38c94928a2f7/topFolders' 
+    -H 'Authorization: Bearer AuIPTf4KYLTYGVnOHQ0cuolwCW2a'
+    ```
+
+  - 取得資料夾內容及檔案版本
+
+    ```bash
+    curl -v 'https://developer.api.autodesk.com/project/v1/projects/b.e65d4a5d-3a06-4162-92d7-38c94928a2f7/folders/urn:adsk.wipprod:fs.folder:co.uckWIUa_T9irIZy8R0Swlg/contents'
+    -H 'Authorization: Bearer AuIPTf4KYLTYGVnOHQ0cuolwCW2a'
+    ```
+
+  - 取得關聯檔案
+
+    ```bash
+    curl -v 'https://developer.api.autodesk.com/data/v1/projects/b.e65d4a5d-3a06-4162-92d7-38c94928a2f7/urn:adsk.wipprod:fs.file:vf.Upj7-bcmTKaLhr0yCF30QQ%3Fversion=1/relationships/refs'
+    -H 'Authorization: Bearer AuIPTf4KYLTYGVnOHQ0cuolwCW2a'
+    ```
+
+  - 搜索、過濾專案和檔案列表
+
+    ```bash
+    curl -v 'https://developer.api.autodesk.com/data/v1/projects/b.e65d4a5d-3a06-4162-92d7-38c94928a2f7/folders/urn:adsk.wipprod:fs.folder:co.Wa0ivcArTf2vBsyUJZFs-Q/search?filter[fileType]=rvt'
+    -H 'Authorization: Bearer AuIPTf4KYLTYGVnOHQ0cuolwCW2a'
+    ```
+
+**OSS (Object Storage Service):**
+
+主要用來上傳/下載檔案及開發者自己的檔案管理，在這個服務裡我們主要面對的是資料容器 (Bucket) 以及容器資料 (Object、上傳的檔案) 的存取，且依 Bucket 的擁有者可以分為下面兩種：
+
+- App owned OSS bucket
+
+  Autodesk 雲端產品 (例如 BIM360、A360、BIM360 Team、Fusion360 等) 上所擁有的 bucket，只允許第三方應用程式對於裡面的資料進行有限度的操作。
+
+  - 建立上傳空間
+
+  ```bash
+  curl -X POST -H "Content-Type: application/vnd.api+json" -H "Accept: application/vnd.api+json" -H "Authorization: Bearer nFRJxzCD8OOUr7hzBwbr06D76zAT"
+  "https://developer.api.autodesk.com/data/v1/projects/b.cGVyc29uYWw6d2l/storage"
+  -d '{
+        "jsonapi": { "version": "1.0" },
+        "data": {
+          "type": "objects",
+          "attributes": {
+            "name": "My First File.jpg"
+          },
+          "relationships": {
+            "target": {
+              "data": { "type": "folders", "id": "urn:adsk.wipprod:fs.folder:co.QneBBX7evT2JSrpeQXga0" }
+            }
+          }
+        }
+  }'
+  ```
+
+  - 上傳檔案
+
+  ```bash
+  curl -X PUT -H "Authorization: Bearer nFRJxzCD8OOUr7hzBwbr06D76zAT" --data-binary @D:\SimpleHouse.rvt "https://developer.api.autodesk.com/oss/v2/buckets/wip.dm.prod/objects/2a6d61f2-49df-4d7b.rvt"
+  ```
+
+  - 建立版號
+
+  ```bash
+  curl -X POST -H "Authorization: Bearer nFRJxzCD8OOUr7hzBwbr06D76zAT" -H "Content-Type: application/vnd.api+json" -H "Accept: application/vnd.api+json"
+  "https://developer.api.autodesk.com/data/v1/projects/b.cGVyc29uYWw6d2l/items" -d '{
+      "jsonapi": { "version": "1.0" },
+      "data": {
+        "type": "items",
+        "attributes": {
+          "displayName": "SimpleHouse.rvt",
+          "extension": {
+            "type": "items:autodesk.bim360:File",
+            "version": "1.0"
+          }
+        },
+        "relationships": {
+          "tip": {
+            "data": {
+              "type": "versions", "id": "1"
+            }
+          },
+          "parent": {
+            "data": {
+              "type": "folders",
+              "id": "urn:adsk.wipprod:fs.folder:co.BJU3PTc4Sd2CmXM492XUiA"
+            }
+          }
+        }
+      },
+      "included": [
+        {
+          "type": "versions",
+          "id": "1",
+          "attributes": {
+            "name": "SimpleHouse.rvt",
+            "extension": {
+              "type": "versions:autodesk.bim360:File",
+              "version": "1.0"
+            }
+          },
+          "relationships": {
+            "storage": {
+              "data": {
+                "type": "objects",
+                "id": "urn:adsk.objects:os.object:wip.dm.prod/2a6d61f2-49df-4d7b.rvt"
+              }
+            }
+          }
+        }
+      ]
+    }'
+  ```
+
+- Developer managed OSS bucket
+
+  此為第三方應用程式所擁有的 bucket，這種資料容器是由 Forge 平台的用戶自己透過 [POST	 buckets](https://forge.autodesk.com/en/docs/data/v2/reference/http/buckets-POST/) 端點建立的 bucket，平台用戶對於 bucket 有較多限度的操作，例如透過 [PUT Object](https://forge.autodesk.com/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-:objectName-PUT/) 直接上傳模型檔案到 bucket 裡。
+
+  - 建立 Bucket
+
+    ```bash
+    curl -v "https://developer.api.autodesk.com/oss/v2/buckets"
+      -X POST
+      -H "Content-Type: application/json"
+      -H "Authorization: Bearer kgEJWMJitdYbhfxghap8SbZqXMoS"
+      -d '
+      {
+        "bucketKey":"bucketExamplekey",
+        "policyKey":"transient"
+      }
+      '
+    ```
+
+  - 上傳模型檔案
+
+    ```bash
+    curl -v 'https://developer.api.autodesk.com/oss/v2/buckets/mybucket/objects/SimpleHouse.rvt'
+    -X 'PUT'
+    -H 'Authorization: Bearer AlmsGlZlqz1JkkzEruUdINMKA6IF'
+    -H 'Content-Type: application/octet-stream'
+    -T 'SimpleHouse.rvt'
+    ```
+
+  - 下載檔案
+
+    ```bash
+    curl -v "https://developer.api.autodesk.com/oss/v2/buckets/mybucket/objects/SimpleHouse.rvt"
+    -X GET
+    -H "Authorization: Bearer ShiAeQ67rdNSfmyEmtGW8Lnrcqto"
+    ```
 
 ### Model Derivative API
+
+Model Derivative API 支援將近 60 餘種業界常見的模型格式、檔案轉檔為其他格式，和截取檔案中的模型資料、清單文件，其功能包含：
+
+- 將 二維(2D) 或 三維(3D) 模型檔案轉檔成網頁、行動裝置能瀏覽的格式 (Autodesk Forge Viewer 的 SVF、F2D 格式)
+
+-將部份支援檔案從原始格式轉檔成一些通用格式，例如 STL、STEP、.IGES 及 OBJ 等
+- 截取模型的階層結構、元件屬性
+
+- 建立不同尺寸的模型縮圖
+
+- Revit 匯出成 IFC
+
+
+![](https://developer.doc.autodesk.com/bPlouYTd/245/_images/MD-overview-diagram.png)
+
+### BIM360 API
 
 
 
 ### Design Automation API
 
+### Reality Capture API
 
+### Viewer API
 
-### Reality Capture
+Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https://threejs.org/) 開發的 JavaScript 程式庫，可以用來在網頁裡瀏覽、檢視、協作多種二維 (2D) 或三維 (3D) 的模型，並開放豐富的應用介面 (API) 來發展、擴充自有應用，其功能包含：
 
+- 網頁式無外掛瀏覽，支援行動裝置的瀏覽器
+- 剖切檢視、爆炸檢視、量測、漫遊
+- 取得構件屬性或參數
+- 豐富的擴充模組
+- 搜尋、標記
+- 圖紙超連結
 
+// 根據 Work Flow 用 Curl 的方式舉例
+
+![alt Forge Work Flow-1](img/forge-work-flow-1.png)
+![alt Forge Work Flow-2](img/forge-work-flow-2.png)
 
 ## Forge SDK 簡介
 
