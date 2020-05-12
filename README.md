@@ -11,6 +11,25 @@
 		padding: 15px;
 	}
 </style>
+<script>
+(function() {
+	function docReady( fn ) {
+			// see if DOM is already available
+			if( document.readyState === 'complete' || document.readyState === 'interactive' ) {
+			// call on next available tick
+			setTimeout( fn, 1 );
+		} else {
+			document.addEventListener( 'DOMContentLoaded', fn );
+		}
+	}
+
+	docReady(function() {
+		document.querySelectorAll( 'a.self-practice' ).forEach(function( a ) {
+			a.href = a.href.replace( '.md', '.html' );
+		});
+	});
+})();
+</script>
 
 #### Day1
 <table width="604">
@@ -48,9 +67,10 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影片自學(<a href="1-Register/#章節自主練習">點擊進入練習</a>)</li>
+					<li>提供示範影片自學</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
+					<li><a class="self-practice" href="1-Register/Practice.md">自主練習連結</a></li>
 				</ul>
 			</td>
 		</tr>
@@ -87,9 +107,10 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影片自學(<a href="2-Setup/#章節自主練習">點擊進入練習</a>)</li>
+					<li>提供示範影片自學</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
+					<li><a class="self-practice" href="2-Setup/Practice.md">自主練習連結</a></li>
 				</ul>
 			</td>
 		</tr>
@@ -137,9 +158,10 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影片自學(<a href="3-ForgeViewerBasic/#章節自主練習">點擊進入練習</a>)</li>
+					<li>提供示範影片自學</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
+					<li><a class="self-practice" href="3-ForgeViewerBasic/Practice.md">自主練習連結</a></li>
 				</ul>
 			</td>
 		</tr>
@@ -212,9 +234,10 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影片自學(<a href="5-Bucket-Management/#章節自主練習">點擊進入練習</a>)</li>
+					<li>提供示範影片自學</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
+					<li><a class="self-practice" href="5-Bucket-Management/Practice.md">自主練習連結</a></li>
 				</ul>
 			</td>
 		</tr>
@@ -261,9 +284,10 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影片自學(<a href="6-Model-Translation/#章節自主練習">點擊進入練習</a>)</li>
+					<li>提供示範影片自學</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
+					<li><a class="self-practice" href="6-Model-Translation/Practice.md">自主練習連結</a></li>
 				</ul>
 			</td>
 		</tr>
@@ -318,9 +342,10 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影片自學(<a href="7-View-Model/#章節自主練習">點擊進入練習</a>)</li>
+					<li>提供示範影片自學</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
+					<li><a class="self-practice" href="7-View-Model/Practice.md">自主練習連結</a></li>
 				</ul>
 			</td>
 		</tr>
