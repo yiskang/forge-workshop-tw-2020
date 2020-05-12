@@ -17,6 +17,8 @@
 
 ## 示範及說明影片
 
+**Note.** 點擊下面的圖片以開啟 YouTube 影片
+
 - 1.Learn Forge 前端基本設定<br/>
   - [![](http://img.youtube.com/vi/IJzVXneHXf4/0.jpg)](http://www.youtube.com/watch?v=IJzVXneHXf4 "5.1-Frontend basic setup")
 

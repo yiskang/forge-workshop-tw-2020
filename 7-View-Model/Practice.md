@@ -15,6 +15,8 @@
 
 ## 參考資料
 
+**Note.** 點擊下面的圖片以開啟 YouTube 影片
+
  - [章節講議](README.md)
  - 使用到的 Forge APIs
     - [https://forge.autodesk.com/en/docs/viewer/v7/reference/Viewing/Document/#load-documentid-onsuccesscallback-onerrorcallback](https://forge.autodesk.com/en/docs/viewer/v7/reference/Viewing/Document/#load-documentid-onsuccesscallback-onerrorcallback)

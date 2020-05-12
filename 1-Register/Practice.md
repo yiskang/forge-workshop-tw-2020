@@ -12,6 +12,8 @@
 
 ## 示範及說明影片
 
+**Note.** 點擊下面的圖片以開啟 YouTube 影片
+
 [![](http://img.youtube.com/vi/nStqkcQbHY0/0.jpg)](http://www.youtube.com/watch?v=nStqkcQbHY0 "1-Forge dev account registration")
 
 ## 參考資料

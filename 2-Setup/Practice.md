@@ -7,6 +7,8 @@
 
 ## 示範及說明影片
 
+**Note.** 點擊下面的圖片以開啟 YouTube 影片
+
 - 1.Learn Forge 範例簡介<br/>
   - [![](http://img.youtube.com/vi/AyGZWbgY_64/0.jpg)](http://www.youtube.com/watch?v=AyGZWbgY_64 "2.1-Learn Forge Intro")
 

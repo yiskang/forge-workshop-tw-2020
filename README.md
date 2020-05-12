@@ -48,7 +48,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影片自學(<a href="1-Register/#章節自主練習">連結</a>)</li>
+					<li>提供示範影片自學(<a href="1-Register/#章節自主練習">點擊進入練習</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -87,7 +87,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影片自學(<a href="2-Setup/#章節自主練習">連結</a>)</li>
+					<li>提供示範影片自學(<a href="2-Setup/#章節自主練習">點擊進入練習</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -137,7 +137,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影片自學(<a href="3-ForgeViewerBasic/#章節自主練習">連結</a>)</li>
+					<li>提供示範影片自學(<a href="3-ForgeViewerBasic/#章節自主練習">點擊進入練習</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -212,7 +212,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影片自學(<a href="5-Bucket-Management/#章節自主練習">連結</a>)</li>
+					<li>提供示範影片自學(<a href="5-Bucket-Management/#章節自主練習">點擊進入練習</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -261,7 +261,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影片自學(<a href="6-Model-Translation/#章節自主練習">連結</a>)</li>
+					<li>提供示範影片自學(<a href="6-Model-Translation/#章節自主練習">點擊進入練習</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -318,7 +318,7 @@
 			</td>
 			<td width="189">
 				<ul>
-					<li>提供示範影片自學(<a href="7-View-Model/#章節自主練習">連結</a>)</li>
+					<li>提供示範影片自學(<a href="7-View-Model/#章節自主練習">點擊進入練習</a>)</li>
 					<li>隨時Slack發問</li>
 					<li>需要時可Zoom視訊答疑</li>
 				</ul>
@@ -382,10 +382,10 @@
 		</tr>
 		<tr>
 			<td width="123">
-				<p>14:00-17:00</p>
+				<p>14:00-16:00</p>
 			</td>
 			<td width="293">
-				<p>TBD</p>
+				<p>Forge 應用需求的技術討論和程式碼分析</p>
 			</td>
 			<td width="189">
 				<p>-</p>
@@ -394,12 +394,9 @@
 	</tbody>
 </table>
 
-
 ## 必備知識
 
 曾接觸過網頁（前端/後端）應用程式開發、設計等經驗，具 ASP.NET Core網頁程式開發經驗者尤佳。
-
-
 
 ## 課前準備
 

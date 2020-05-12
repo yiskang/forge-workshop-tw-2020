@@ -206,7 +206,7 @@ Data Management API 提供了一個統一的資料存取模式，用來存取 Au
 
 - Developer managed OSS bucket
 
-  此為第三方應用程式所擁有的 bucket，這種資料容器是由 Forge 平台的用戶自己透過 [POST	 buckets](https://forge.autodesk.com/en/docs/data/v2/reference/http/buckets-POST/) 端點建立的 bucket，平台用戶對於 bucket 有較多限度的操作，例如透過 [PUT Object](https://forge.autodesk.com/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-:objectName-PUT/) 直接上傳模型檔案到 bucket 裡。
+  此為第三方應用程式所擁有的 bucket，這種資料容器是由 Forge 平台的用戶自己透過 [POST buckets](https://forge.autodesk.com/en/docs/data/v2/reference/http/buckets-POST/) 端點建立的 bucket，平台用戶對於 bucket 有較多限度的操作，例如透過 [PUT Object](https://forge.autodesk.com/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-:objectName-PUT/) 直接上傳模型檔案到 bucket 裡。
 
   - 建立 Bucket
 
@@ -259,7 +259,7 @@ Model Derivative API 支援將近 60 餘種業界常見的模型格式、檔案�
 
 ### BIM360 API
 
-前面提到的 [Data Management API](#DataManagementAPI) 是用來管理模型檔案資料而存在的 API，而BIM360 API 是專門用來管理、存取 BIM360 管理平台資料存在的 API
+前面提到的 [Data Management API](#data-management-api) 是用來管理模型檔案資料而存在的 API，而BIM360 API 是專門用來管理、存取 BIM360 管理平台資料存在的 API
 
 ### Design Automation API
 

@@ -11,6 +11,8 @@
 
 ## 示範及說明影片
 
+**Note.** 點擊下面的圖片以開啟 YouTube 影片
+
 - 1.Learn Forge 模型轉檔及轉檔進度查詢前端功能實作（jstree）<br/>
   - [![](http://img.youtube.com/vi/_E9f-ZO6CJs/0.jpg)](http://www.youtube.com/watch?v=_E9f-ZO6CJs "6.1-Frontend Model Translation and Progess Check")
 
