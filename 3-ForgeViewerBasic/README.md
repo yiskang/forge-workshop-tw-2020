@@ -99,7 +99,7 @@ Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https:
 - 3.讀取模型視圖 Manifest（可載入的模型視圖）
 
   - ```javascript
-    var documentId = 'urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6bGt3ZWo3eHBiZ3A2M3g0aGwzMzV5Nm0yNm9ha2dnb2YyMDE3MDUyOHQwMjQ3MzIzODZ6L3JhY19iYXNpY19zYW1wbGVfcHJvamVjdC5ydnQ';
+    var documentId = 'urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6djBubW1ybnJ2dWpwZWl2Z3lvbXlwaWxxcGVodnRucHctcGVyc2lzdGVudC9hZHNrLWZvcmdlLWhlbGxvd29ybGQucnZ0';
     Autodesk.Viewing.Document.load(
       documentId,
       onDocumentLoadSuccess,
@@ -128,10 +128,58 @@ Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https:
 
 ## Forge Viewer UI功能簡介
 
-- 1.Forge Viewer 模型剖切
-  - ![alt ForgeViewerSectionTool](img/forge-viewer-section-tool.png)
-- 2.Forge Viewer 模型量測
-  - ![alt ForgeViewerMeasurement](img/forge-viewer-measurement.png)
+![alt ForgeViewerUI](img/forge-viewer-ui.png)
+
+### 導覽工具
+
+是一組用來操作 Viewer 相機及改變相機參數的工具，提供建模軟體軟體裡常見的模型導覽工具，其中包含：
+
+- 相機操作工具：迴轉檢視、自由迴轉、平移、縮放、第一人稱
+- 改變相機參數工具：縮放檢視、修改相機焦距、旋轉相機角度
+
+### 模型工具
+
+是一組用來操作模型的工具，其中包含：
+
+#### 量測工具
+
+![alt ForgeViewerMeasurement](img/forge-viewer-measurement.png)
+
+#### 剖切工具
+
+![alt ForgeViewerSectionTool](img/forge-viewer-section-tool.png)
+
+#### 爆炸工具
+
+![alt ForgeViewerExplodeTool](img/forge-viewer-explode-tool.gif)
+
+#### 模型結構樹
+
+![alt ForgeViewerModelStructure](img/forge-viewer-model-structure.png)
+
+#### 模型屬性
+
+![alt ForgeViewerModelProperties](img/forge-viewer-model-properties.png)
+
+### 設定工具
+
+是一組用來管理 Viewer 相關設定的工具，其中包含：
+
+![alt ForgeViewerSettings1](img/forge-viewer-settings-1.png)
+
+![alt ForgeViewerSettings2](img/forge-viewer-settings-2.png)
+
+![alt ForgeViewerSettings3](img/forge-viewer-settings-3.png)
+
+![alt ForgeViewerSettings4](img/forge-viewer-settings-4.png)
+
+### 視圖方塊
+
+是一個用來協助操作視圖顯示方式、操作相機行為的工具，提供與設計軟體 (如Revit、Navisworks、AutoCAD等) 一樣的使用體驗
+
+![alt ViewCube](img/forge-viewer-viewcube.png)
+
+**Note.** 更多操作使用說明：<https://knowledge.autodesk.com/search-result/caas/CloudHelp/cloudhelp/ENU/Autodesk-360-New/files/GUID-522901FB-DDBF-49F3-B20F-110F14A1AC34-htm.html>
 
 ## 章節自主練習
 

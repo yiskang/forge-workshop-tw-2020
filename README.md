@@ -380,7 +380,7 @@
 				<p>l   Forge Viewer 功能及API示範</p>
 			</td>
 			<td width="189">
-				<p>講師簡報導說，並讓學員跟著講師練習</p>
+				<p>講師簡報導說，並讓學員跟著講師練習(<a href="8-Viewer-APIs">講議連結</a>)</p>
 			</td>
 		</tr>
 		<tr>
