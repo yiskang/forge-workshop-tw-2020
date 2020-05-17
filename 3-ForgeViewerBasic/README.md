@@ -21,7 +21,35 @@ Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https:
 
 ## Forge Viewer 初始化範例
 
-- 1.引用 Forge Viewer 的 JavaScript 程式庫
+- 1.新增一個 `index.html`，並填入下面內容
+
+  - ```html
+      <head>
+          <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
+          <meta charset="utf-8">
+          <style>
+              body {
+                  margin: 0;
+              }
+      
+              #forgeViewer {
+                  width: 100%;
+                  height: 100%;
+                  margin: 0;
+                  background-color: #F0F8FF;
+              }
+          </style>
+      </head>
+      <body>
+          <div id="forgeViewer"></div>
+      
+          <script>
+            // Viewer code goes here
+          </script>
+      </body>
+      ```
+
+- 2.在 `index.html` 裡引用 Forge Viewer 的 JavaScript 程式庫
 
   - ```html
     <head>
@@ -51,7 +79,7 @@ Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https:
     </body>
     ```
 
-- 2.初始化 Viewer
+- 3.初始化 Viewer
 
   - ```javascript
     function fetchForgeToken( callback ) {
@@ -96,7 +124,7 @@ Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https:
     });
     ```
 
-- 3.讀取模型視圖 Manifest（可載入的模型視圖）
+- 4.讀取模型視圖 Manifest（可載入的模型視圖）
 
   - ```javascript
     var documentId = 'urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6djBubW1ybnJ2dWpwZWl2Z3lvbXlwaWxxcGVodnRucHctcGVyc2lzdGVudC9hZHNrLWZvcmdlLWhlbGxvd29ybGQucnZ0';
@@ -115,14 +143,14 @@ Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https:
     }
     ```
 
-- 4.載入模型視圖（Viewable Bubble）
+- 5.載入模型視圖（Viewable Bubble）
 
   - ```javascript
     var defaultModel = viewerDocument.getRoot().getDefaultGeometry();
     viewer.loadDocumentNode(viewerDocument, defaultModel);
     ```
 
-
+- 6.用瀏覽器開啟 `index.html`
 
 ![alt ForgeViewerHelloWorld](img/forge-viewer-hello-world.jpg)
 
