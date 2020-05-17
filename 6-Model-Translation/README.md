@@ -85,6 +85,33 @@
           })
         }
       });
+
+      function autodeskCustomMenu(autodeskNode) {
+      var items;
+
+      switch (autodeskNode.type) {
+
+          // ...
+
+          case "object":
+            items = {
+
+                // ...
+
+                translateFile: {
+                    label: "Translate",
+                    action: function () {
+                        var treeNode = $('#appBuckets').jstree(true).get_selected(true)[0];
+                        translateObject(treeNode);
+                    },
+                    icon: 'glyphicon glyphicon-eye-open'
+                }
+            };
+            break;
+      }
+
+      return items;
+    }
     ```
 
 ## 章節自主練習

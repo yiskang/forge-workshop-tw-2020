@@ -219,7 +219,7 @@
 			<td width="293">
 				<p>章節五：</p>
 				<p>l&nbsp;&nbsp; Forge Data Management - Bucket新增及模型上傳</p>
-				<p>l&nbsp;&nbsp; (時間夠的話) 下載及刪除已上傳模型檔案</p>
+				<p>l&nbsp;&nbsp; 下載及刪除已上傳模型檔案</p>
 			</td>
 			<td width="189">
 				<p>講師簡報導說(<a href="5-Bucket-Management">講議連結</a>)</p>

@@ -62,47 +62,68 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
         $('#appBuckets').jstree('open_all');
       })
     ```
+
 - 後端
-  
-  - ```c#
-    /// <summary>
-    /// Return list of buckets (id=#) or list of objects (id=bucketKey)
-    /// </summary>
-    [HttpGet]
-    [Route("api/forge/oss/buckets")]
-    public async Task<IList<TreeNode>> GetOSSAsync(string id)
-    {
-        IList<TreeNode> nodes = new List<TreeNode>();
-        dynamic oauth = await OAuthController.GetInternalAsync();
-    
-        if (id == "#") // root
-        {
-            // in this case, let's return all buckets
-            BucketsApi appBckets = new BucketsApi();
-            appBckets.Configuration.AccessToken = oauth.access_token;
-    
-            // to simplify, let's return only the first 100 buckets
-            dynamic buckets = await appBckets.GetBucketsAsync("US", 100);
-            foreach (KeyValuePair<string, dynamic> bucket in new DynamicDictionaryItems(buckets.items))
-            {
-                nodes.Add(new TreeNode(bucket.Value.bucketKey, bucket.Value.bucketKey.Replace(ClientId + "-", string.Empty), "bucket", true));
-            }
-        }
-        else
-        {
-            // as we have the id (bucketKey), let's return all 
-            ObjectsApi objects = new ObjectsApi();
-            objects.Configuration.AccessToken = oauth.access_token;
-            var objectsList = objects.GetObjects(id);
-            foreach (KeyValuePair<string, dynamic> objInfo in new DynamicDictionaryItems(objectsList.items))
-            {
-                nodes.Add(new TreeNode(Base64Encode((string)objInfo.Value.objectId),
-                  objInfo.Value.objectKey, "object", false));
-            }
-        }
-        return nodes;
-    }
-    ```
+  - 使用到的 SDK 方法
+
+    - [取得 Bucket 列表](https://github.com/Autodesk-Forge/forge-api-dotnet-client/blob/master/docs/BucketsApi.md#getbuckets)
+
+      - ```c#
+        var appBckets = new BucketsApi();
+        appBckets.Configuration.AccessToken = bearer.access_token;
+
+        dynamic buckets = await appBckets.GetBucketsAsync( "US", 100 );
+        ```
+
+    - [取得物件 (檔案) 列表](https://github.com/Autodesk-Forge/forge-api-dotnet-client/blob/master/docs/ObjectsApi.md#getobjects)
+
+      - ```C#
+        var objects = new ObjectsApi();
+        objects.Configuration.AccessToken = bearer.access_token;
+        dynamic objectsList = objects.GetObjects( id );
+        ```
+
+  - 程式碼內容
+
+    - ```c#
+      /// <summary>
+      /// Return list of buckets (id=#) or list of objects (id=bucketKey)
+      /// </summary>
+      [HttpGet]
+      [Route("api/forge/oss/buckets")]
+      public async Task<IList<TreeNode>> GetOSSAsync(string id)
+      {
+          IList<TreeNode> nodes = new List<TreeNode>();
+          dynamic oauth = await OAuthController.GetInternalAsync();
+
+          if (id == "#") // root
+          {
+              // in this case, let's return all buckets
+              BucketsApi appBckets = new BucketsApi();
+              appBckets.Configuration.AccessToken = oauth.access_token;
+
+              // to simplify, let's return only the first 100 buckets
+              dynamic buckets = await appBckets.GetBucketsAsync("US", 100);
+              foreach (KeyValuePair<string, dynamic> bucket in new DynamicDictionaryItems(buckets.items))
+              {
+                  nodes.Add(new TreeNode(bucket.Value.bucketKey, bucket.Value.bucketKey.Replace(ClientId + "-", string.Empty), "bucket", true));
+              }
+          }
+          else
+          {
+              // as we have the id (bucketKey), let's return all
+              ObjectsApi objects = new ObjectsApi();
+              objects.Configuration.AccessToken = oauth.access_token;
+              var objectsList = objects.GetObjects(id);
+              foreach (KeyValuePair<string, dynamic> objInfo in new DynamicDictionaryItems(objectsList.items))
+              {
+                  nodes.Add(new TreeNode(Base64Encode((string)objInfo.Value.objectId),
+                    objInfo.Value.objectKey, "object", false));
+              }
+          }
+          return nodes;
+      }
+      ```
 
 ### 建立、新增 Bucket
 
@@ -127,24 +148,47 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
       });
     }
     ```
+
 - 後端
-  
-  - ```c#
-    /// <summary>
-    /// Create a new bucket 
-    /// </summary>
-    [HttpPost]
-    [Route("api/forge/oss/buckets")]
-    public async Task<dynamic> CreateBucket([FromBody]CreateBucketModel bucket)
-    {
-        BucketsApi buckets = new BucketsApi();
-        dynamic token = await OAuthController.GetInternalAsync();
-        buckets.Configuration.AccessToken = token.access_token;
-        PostBucketsPayload bucketPayload = new PostBucketsPayload(string.Format("{0}-{1}", ClientId, bucket.bucketKey.ToLower()), null,
-          PostBucketsPayload.PolicyKeyEnum.Transient);
-        return await buckets.CreateBucketAsync(bucketPayload, "US");
-    }
-    ```
+
+  - 使用到的 SDK 方法
+
+    - [建立新的 Bucket](https://github.com/Autodesk-Forge/forge-api-dotnet-client/blob/master/docs/BucketsApi.md#createbucket)
+
+      - ```C#
+          var buckets = new BucketsApi();
+          buckets.Configuration.AccessToken = bearer.access_token;
+          var bucketPayload = new PostBucketsPayload(
+            "YOUR_BUCKET_NAME",
+            null,
+            PostBucketsPayload.PolicyKeyEnum.Transient
+          );
+
+          dynamic bucketCreated = await buckets.CreateBucketAsync(
+            bucketPayload,
+            "US"
+          );
+        ```
+
+  - 程式碼內容
+
+    - ```c#
+      /// <summary>
+      /// Create a new bucket
+      /// </summary>
+      [HttpPost]
+      [Route("api/forge/oss/buckets")]
+      public async Task<dynamic> CreateBucket([FromBody]CreateBucketModel bucket)
+      {
+          BucketsApi buckets = new BucketsApi();
+          dynamic token = await OAuthController.GetInternalAsync();
+          buckets.Configuration.AccessToken = token.access_token;
+          PostBucketsPayload bucketPayload = new PostBucketsPayload(string.Format("{0}-{1}", ClientId, bucket.bucketKey.ToLower()), null,
+            PostBucketsPayload.PolicyKeyEnum.Transient);
+          return await buckets.CreateBucketAsync(bucketPayload, "US");
+      }
+      ```
+
 - 注意事項
 
   - Bucket 的命名規則需符合：`[-_.a-z0-9]{3,128}`
@@ -172,7 +216,7 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
             var formData = new FormData();
             formData.append('fileToUpload', file);
             formData.append('bucketKey', node.id);
-    
+
             $.ajax({
               url: '/api/forge/oss/objects',
               data: formData,
@@ -187,44 +231,174 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
             break;
         }
       });
-    ```
-- 後端
-  
-  - ```c#
-    /// <summary>
-    /// Receive a file from the client and upload to the bucket
-    /// </summary>
-    /// <returns></returns>
-    [HttpPost]
-    [Route("api/forge/oss/objects")]
-    public async Task<dynamic> UploadObject([FromForm]UploadFile input)
-    {
-        // save the file on the server
-        var fileSavePath = Path.Combine(_env.ContentRootPath, input.fileToUpload.FileName);
-        using (var stream = new FileStream(fileSavePath, FileMode.Create))
-            await input.fileToUpload.CopyToAsync(stream);
-    
-    
-        // get the bucket...
-        dynamic oauth = await OAuthController.GetInternalAsync();
-        ObjectsApi objects = new ObjectsApi();
-        objects.Configuration.AccessToken = oauth.access_token;
-    
-        // upload the file/object, which will create a new object
-        dynamic uploadedObj;
-        using (StreamReader streamReader = new StreamReader(fileSavePath))
-        {
-            uploadedObj = await objects.UploadObjectAsync(input.bucketKey,
-                   input.fileToUpload.FileName, (int)streamReader.BaseStream.Length, streamReader.BaseStream,
-                   "application/octet-stream");
-        }
-    
-        // cleanup
-        System.IO.File.Delete(fileSavePath);
-    
-        return uploadedObj;
+
+
+    function autodeskCustomMenu(autodeskNode) {
+      var items;
+
+      switch (autodeskNode.type) {
+          case "bucket":
+              items = {
+                  uploadFile: {
+                      label: "Upload file",
+                      action: function () {
+                          uploadFile();
+                      },
+                      icon: 'glyphicon glyphicon-cloud-upload'
+                  }
+              };
+              break;
+      }
+
+      return items;
     }
     ```
+
+- 後端
+
+  - 使用到的 SDK 方法
+
+    - [上傳物件 (檔案)](https://github.com/Autodesk-Forge/forge-api-dotnet-client/blob/master/docs/ObjectsApi.md#uploadobject)
+
+      - ```c#
+        var objects = new ObjectsApi();
+        objects.Configuration.AccessToken = bearer.access_token;
+
+        dynamic uploadedObj;
+        using( StreamReader streamReader = new StreamReader( fileSavePath ) )
+        {
+          uploadedObj = await objects.UploadObjectAsync(
+            "YOUR_BUCKET_NAME",
+            "adsk-forge-helloworld.rvt",
+            (int)streamReader.BaseStream.Length,
+            streamReader.BaseStream,
+            "application/octet-stream"
+          );
+        }
+        ```
+
+  - 程式碼內容
+
+    - ```c#
+      /// <summary>
+      /// Receive a file from the client and upload to the bucket
+      /// </summary>
+      /// <returns></returns>
+      [HttpPost]
+      [Route("api/forge/oss/objects")]
+      public async Task<dynamic> UploadObject([FromForm]UploadFile input)
+      {
+          // save the file on the server
+          var fileSavePath = Path.Combine(_env.ContentRootPath, input.fileToUpload.FileName);
+          using (var stream = new FileStream(fileSavePath, FileMode.Create))
+              await input.fileToUpload.CopyToAsync(stream);
+
+          // get the bucket...
+          dynamic oauth = await OAuthController.GetInternalAsync();
+          ObjectsApi objects = new ObjectsApi();
+          objects.Configuration.AccessToken = oauth.access_token;
+
+          // upload the file/object, which will create a new object
+          dynamic uploadedObj;
+          using (StreamReader streamReader = new StreamReader(fileSavePath))
+          {
+              uploadedObj = await objects.UploadObjectAsync(input.bucketKey,
+                    input.fileToUpload.FileName, (int)streamReader.BaseStream.Length, streamReader.BaseStream,
+                    "application/octet-stream");
+          }
+
+          // cleanup
+          System.IO.File.Delete(fileSavePath);
+
+          return uploadedObj;
+      }
+      ```
+
+### 刪除已上傳的物件 (模型檔案)
+
+- 前端
+
+  - ```javascript
+    function autodeskCustomMenu(autodeskNode) {
+      var items;
+
+      switch (autodeskNode.type) {
+
+          // ...
+
+          case "object":
+              items = {
+                  deleteFile: {
+                      label: "delete",
+                      action: function () {
+                          var treeNode = $('#appBuckets').jstree(true).get_selected(true)[0];
+                          translateObject(treeNode);
+                      },
+                      icon: 'glyphicon glyphicon-remove'
+                  }
+              };
+              break;
+      }
+
+      return items;
+    }
+
+     function deleteObject(node) {
+      if (node == null) node = $('#appBuckets').jstree(true).get_selected(true)[0];
+
+      var bucketKey = node.parents[0];
+      var parentNode = $('#appBuckets').jstree(true).get_node(bucketKey);
+      var objectName = node.text;
+      $.ajax({
+        url: '/api/forge/oss/objects/' + objectName,
+        type: 'DELETE',
+        success: function (data) {
+          $('#appBuckets').jstree(true).refresh_node(parentNode);
+        }
+      });
+    }
+    ```
+
+- 後端
+
+  - 使用到的 SDK 方法
+
+    - [刪除物件 (檔案)](https://github.com/Autodesk-Forge/forge-api-dotnet-client/blob/master/docs/ObjectsApi.md#deleteobject)
+
+      - ```c#
+        var objects = new ObjectsApi();
+        objects.Configuration.AccessToken = bearer.access_token;
+
+        dynamic result = objects.DeleteObject(
+          "YOUR_BUCKET_NAME",
+          "adsk-forge-helloworld.rvt"
+        );
+        ```
+
+  - 程式碼內容
+
+    - ```c#
+      /// <summary>
+      /// Delete a file from the bucket
+      /// </summary>
+      /// <returns></returns>
+      [HttpDelete]
+      [Route("api/forge/oss/{bucketKey}/objects/{objectName}")]
+      public async Task<dynamic> DeleteObject(string bucketKey, string objectName)
+      {
+          // get the bucket...
+          dynamic oauth = await OAuthController.GetInternalAsync();
+          ObjectsApi objects = new ObjectsApi();
+          objects.Configuration.AccessToken = oauth.access_token;
+
+          dynamic result = objects.DeleteObject(
+            bucketKey,
+            objectName
+          );
+
+          return result;
+      }
+      ```
 
 ## 章節自主練習
 
