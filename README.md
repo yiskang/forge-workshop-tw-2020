@@ -35,7 +35,7 @@
 <table width="604">
 	<tbody>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>時間</p>
 			</td>
 			<td width="293">
@@ -46,7 +46,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>09:00 &ndash; 09:10</p>
 			</td>
 			<td width="293">
@@ -59,7 +59,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>09:10-09:30</p>
 			</td>
 			<td width="293">
@@ -75,7 +75,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>09:30-09:40</p>
 			</td>
 			<td width="293">
@@ -86,7 +86,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>09:40-09:50</p>
 			</td>
 			<td width="293">
@@ -99,7 +99,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>09:50-10:30</p>
 			</td>
 			<td width="293">
@@ -115,7 +115,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>10:30-10:40</p>
 			</td>
 			<td width="293">
@@ -126,7 +126,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>10:40-11:00</p>
 			</td>
 			<td width="293">
@@ -137,7 +137,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>11:00-11:10</p>
 			</td>
 			<td width="293">
@@ -150,7 +150,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>11:10-11:50</p>
 			</td>
 			<td width="293">
@@ -166,7 +166,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>11:50-12:00</p>
 			</td>
 			<td width="293">
@@ -177,7 +177,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>12:00-14:00</p>
 			</td>
 			<td width="293">
@@ -188,7 +188,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>14:00-14:20</p>
 			</td>
 			<td width="293">
@@ -202,7 +202,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>14:20-14:30</p>
 			</td>
 			<td width="293">
@@ -213,7 +213,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>14:30-14:40</p>
 			</td>
 			<td width="293">
@@ -226,7 +226,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>14:40-15:30</p>
 			</td>
 			<td width="293">
@@ -242,7 +242,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>15:30-15:40</p>
 			</td>
 			<td width="293">
@@ -253,7 +253,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>15:40-16:00</p>
 			</td>
 			<td width="293">
@@ -264,7 +264,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>16:00-16:10</p>
 			</td>
 			<td width="293">
@@ -276,7 +276,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>16:10-17:00</p>
 			</td>
 			<td width="293">
@@ -292,7 +292,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>17:00-17:10</p>
 			</td>
 			<td width="293">
@@ -311,7 +311,7 @@
 <table width="604">
 	<tbody>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>時間</p>
 			</td>
 			<td width="293">
@@ -322,7 +322,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>09:00 – 09:20</p>
 			</td>
 			<td width="293">
@@ -334,7 +334,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>09:20-10:20</p>
 			</td>
 			<td width="293">
@@ -350,7 +350,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>10:20-10:30</p>
 			</td>
 			<td width="293">
@@ -361,7 +361,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>10:30-10:40</p>
 			</td>
 			<td width="293">
@@ -372,7 +372,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>10:40-11:50</p>
 			</td>
 			<td width="293">
@@ -384,7 +384,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>10:50-12:00</p>
 			</td>
 			<td width="293">
@@ -395,7 +395,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>12:00-14:00</p>
 			</td>
 			<td width="293">
@@ -406,7 +406,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="123">
+			<td width="150">
 				<p>14:00-16:00</p>
 			</td>
 			<td width="293">
@@ -430,5 +430,5 @@
    - [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
 2. 確保網路連線順暢、並可以存取：
-   - Forge 相關網域，如https://forge.autodesk.com 及 https://developer.api.autodesk.com
-   - [Slack](https://slack.com/) 及 Zoom
+   - Forge 相關網域，如 [Autodesk Forge](https://forge.autodesk.com/) 及 [Forge RCDB](https://forge-rcdb.autodesk.io/configurator?id=57f3739777c879f48ad54a44)（**請確保能夠成功開啟**）
+   - [Slack](https://slack.com/) 及 [Zoom](https://zoom.us/test) (**於報名成功後會收到 Slack 邀請**)

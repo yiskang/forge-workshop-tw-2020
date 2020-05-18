@@ -404,7 +404,7 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
 
 - 前端
 
-  - 目標程式碼
+  - 程式碼內容
 
     - ```javascript
       function autodeskCustomMenu(autodeskNode) {
@@ -468,57 +468,7 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
 
   - 需要針對 jQuery 進行擴充以支援下載檔案
 
-    - ```javascript
-      /**
-      *
-      * jquery.binarytransport.js
-      *
-      * @description. jQuery ajax transport for making binary data type requests.
-      * @version 1.0 
-      * @author Henry Algus <henryalgus@gmail.com>
-      *
-      */
-      // use this transport for "binary" data type
-      $.ajaxTransport("+binary", function(options, originalOptions, jqXHR) {
-          // check for conditions and support for blob / arraybuffer response type
-          if (window.FormData && ((options.dataType && (options.dataType == 'binary')) || (options.data && ((window.ArrayBuffer && options.data instanceof ArrayBuffer) || (window.Blob && options.data instanceof Blob))))) {
-              return {
-                  // create new XMLHttpRequest
-                  send: function(headers, callback) {
-                      // setup all variables
-                      var xhr = new XMLHttpRequest(),
-                          url = options.url,
-                          type = options.type,
-                          async = options.async || true,
-                          // blob or arraybuffer. Default is blob
-                          dataType = options.responseType || "blob",
-                          data = options.data || null,
-                          username = options.username || null,
-                          password = options.password || null;
-
-                      xhr.addEventListener('load', function() {
-                          var data = {};
-                          data[options.dataType] = xhr.response;
-                          // make callback and send data
-                          callback(xhr.status, xhr.statusText, data, xhr.getAllResponseHeaders());
-                      });
-
-                      xhr.open(type, url, async, username, password);
-
-                      // setup custom headers
-                      for (var i in headers) {
-                          xhr.setRequestHeader(i, headers[i]);
-                      }
-
-                      xhr.responseType = dataType;
-                      xhr.send(data);
-                  },
-                  abort: function() {
-                      jqXHR.abort();
-                  }
-              };
-          }
-      ```
+    - 下載 [jquery.binarytransport.js](files/jquery.binarytransport.js)，並貼在 ForgeTree.js 的適當處
 
 - 後端
 
@@ -526,15 +476,15 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
 
     - [取得物件 (檔案)的詳細資料](https://github.com/Autodesk-Forge/forge-api-dotnet-client/blob/master/docs/ObjectsApi.md#getobjectdetails)
 
-    - ```c#
-      var objects = new ObjectsApi();
-      objects.Configuration.AccessToken = bearer.access_token;
+      - ```c#
+        var objects = new ObjectsApi();
+        objects.Configuration.AccessToken = bearer.access_token;
 
-      dynamic result = objects.GetObjectDetails(
-        "YOUR_BUCKET_NAME",
-        "adsk-forge-helloworld.rvt"
-      );
-      ```
+        dynamic result = objects.GetObjectDetails(
+          "YOUR_BUCKET_NAME",
+          "adsk-forge-helloworld.rvt"
+        );
+        ```
 
     - [下載物件 (檔案)](https://github.com/Autodesk-Forge/forge-api-dotnet-client/blob/master/docs/ObjectsApi.md#getobject)
 

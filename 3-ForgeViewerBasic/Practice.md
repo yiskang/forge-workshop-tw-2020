@@ -16,6 +16,7 @@
    - [https://forge.autodesk.com/en/docs/viewer/v7/developers_guide/viewer_basics/starting-html/](https://forge.autodesk.com/en/docs/viewer/v7/developers_guide/viewer_basics/starting-html/)
    - [https://forge.autodesk.com/en/docs/viewer/v7/developers_guide/viewer_basics/initialization/](https://forge.autodesk.com/en/docs/viewer/v7/developers_guide/viewer_basics/initialization/)
    - [https://forge.autodesk.com/en/docs/viewer/v7/developers_guide/viewer_basics/load-a-model/](https://forge.autodesk.com/en/docs/viewer/v7/developers_guide/viewer_basics/load-a-model/)
+  - 點擊此處下載本練習使用的 Revit 模型: [adsk-forge-helloworld.rvt](3-ForgeViewerBasic/models/adsk-forge-helloworld.rvt)
 
 <br/>
 
