@@ -2,9 +2,9 @@
 
 ## Forge Viewer 簡介
 
-### SVF 簡易架構
+### Forge Viewer 技術簡易架構
 
-![alt FogeViewerTech](img/foge-viewer-tech.png)
+![alt ForgeViewerTech](img/forge-viewer-tech.png)
 
 ### Forge Viewer 實作
 
@@ -12,7 +12,7 @@
 
   - ```javascript
     var viewer;
-    
+
     function launchViewer(urn) {
     }
     ```
@@ -27,20 +27,20 @@
         });
       });
     }
-    
+
     var options = {
-    	env: 'AutodeskProduction',
-    	getAccessToken: getForgeToken
+      env: 'AutodeskProduction',
+      getAccessToken: getForgeToken
     };
-    
+
     Autodesk.Viewing.Initializer(options, () => {
       var htmlDiv = document.getElementById( 'forgeViewer' );
       viewer = new Autodesk.Viewing.GuiViewer3D( htmlDiv, { extensions: [ 'Autodesk.DocumentBrowser'] });
-      
-    	viewer.start();
-    	var documentId = 'urn:' + urn;
-    
-    	// Read model vies code goes here
+
+      viewer.start();
+      var documentId = 'urn:' + urn;
+
+      // Read model vies code goes here
     });
     ```
 
@@ -52,11 +52,11 @@
       onDocumentLoadSuccess,
       onDocumentLoadFailure
     );
-    
+
     function onDocumentLoadSuccess(viewerDocument) {
-      	/// Load model code goes here
+      // Load model code goes here
     }
-    
+
     function onDocumentLoadFailure() {
         console.error('Failed fetching Forge manifest');
     }

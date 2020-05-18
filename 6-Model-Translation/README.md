@@ -22,41 +22,56 @@
       });
     }
     ```
+
 - 後端
   
-  - ```c#
-    /// <summary>
-    /// Start the translation job for a give bucketKey/objectName
-    /// </summary>
-    /// <param name="objModel"></param>
-    /// <returns></returns>
-    [HttpPost]
-    [Route("api/forge/modelderivative/jobs")]
-    public async Task<dynamic> TranslateObject([FromBody]TranslateObjectModel objModel)
-    {
-        dynamic oauth = await OAuthController.GetInternalAsync();
-    
-        // prepare the payload
-        List<JobPayloadItem> outputs = new List<JobPayloadItem>()
-        {
-        new JobPayloadItem(
-            JobPayloadItem.TypeEnum.Svf,
-            new List<JobPayloadItem.ViewsEnum>()
-            {
-            JobPayloadItem.ViewsEnum._2d,
-            JobPayloadItem.ViewsEnum._3d
-            })
-        };
-        JobPayload job;
-        job = new JobPayload(new JobPayloadInput(objModel.objectName), new JobPayloadOutput(outputs));
-    
-        // start the translation
+  - 使用到的 SDK 方法
+
+    - [送出轉檔工作](https://github.com/Autodesk-Forge/forge-api-dotnet-client/blob/master/docs/DerivativesApi.md#translate)
+
+      - ```c#
+        var job = new JobPayload();
+
         DerivativesApi derivative = new DerivativesApi();
-        derivative.Configuration.AccessToken = oauth.access_token;
+        derivative.Configuration.AccessToken = bearer.access_token;
         dynamic jobPosted = await derivative.TranslateAsync(job);
-        return jobPosted;
-    }
-    ```
+        ```
+
+  - 程式碼內容
+
+    - ```c#
+      /// <summary>
+      /// Start the translation job for a give bucketKey/objectName
+      /// </summary>
+      /// <param name="objModel"></param>
+      /// <returns></returns>
+      [HttpPost]
+      [Route("api/forge/modelderivative/jobs")]
+      public async Task<dynamic> TranslateObject([FromBody]TranslateObjectModel objModel)
+      {
+          dynamic oauth = await OAuthController.GetInternalAsync();
+
+          // prepare the payload
+          List<JobPayloadItem> outputs = new List<JobPayloadItem>()
+          {
+            new JobPayloadItem(
+                JobPayloadItem.TypeEnum.Svf,
+                new List<JobPayloadItem.ViewsEnum>()
+                {
+                  JobPayloadItem.ViewsEnum._2d,
+                  JobPayloadItem.ViewsEnum._3d
+                }
+            )
+          };
+          var job = new JobPayload(new JobPayloadInput(objModel.objectName), new JobPayloadOutput(outputs));
+
+          // start the translation
+          DerivativesApi derivative = new DerivativesApi();
+          derivative.Configuration.AccessToken = oauth.access_token;
+          dynamic jobPosted = await derivative.TranslateAsync(job);
+          return jobPosted;
+      }
+      ```
 
 ### 轉檔進度查詢
 
@@ -95,9 +110,6 @@
 
           case "object":
             items = {
-
-                // ...
-
                 translateFile: {
                     label: "Translate",
                     action: function () {
@@ -105,7 +117,9 @@
                         translateObject(treeNode);
                     },
                     icon: 'glyphicon glyphicon-eye-open'
-                }
+                },
+
+                // ...
             };
             break;
       }
