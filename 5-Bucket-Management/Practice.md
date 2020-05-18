@@ -15,9 +15,9 @@
    - 透過 Forge .NET Client SDK 的 `BucketsApi` 實作端點： `GET /api/forge/oss/buckets`
      - 條列該 Forge App(`Client ID`)底下的所有 Bucket
      - 條列 Bucket 底下所有上傳的物件（模型檔案）
-   - 透過 Forge .NET Client SDK 的 ` ObjectsApi` 實作上傳物件（模型檔案）的端點： `POST /api/forge/oss/objects`
-   - 透過 Forge .NET Client SDK 的 ` ObjectsApi` 實作刪除已上傳的物件（模型檔案）的端點： `DELETE /api/forge/oss/{bucketKey}/objects/{objectName}`
-   - 透過 Forge .NET Client SDK 的 ` ObjectsApi` 實作下載已上傳的物件（模型檔案）的端點： `GET /api/forge/oss/{bucketKey}/objects/{objectName}/download`
+   - 透過 Forge .NET Client SDK 的 `ObjectsApi` 實作上傳物件（模型檔案）的端點： `POST /api/forge/oss/objects`
+   - 透過 Forge .NET Client SDK 的 `ObjectsApi` 實作刪除已上傳的物件（模型檔案）的端點： `DELETE /api/forge/oss/{bucketKey}/objects/{objectName}`
+   - 透過 Forge .NET Client SDK 的 `ObjectsApi` 實作下載已上傳的物件（模型檔案）的端點： `GET /api/forge/oss/{bucketKey}/objects/{objectName}/download`
 
 ## 示範及說明影片
 

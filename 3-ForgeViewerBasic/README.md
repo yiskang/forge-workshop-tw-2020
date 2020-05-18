@@ -24,6 +24,7 @@ Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https:
 - 1.新增一個 `index.html`，並填入下面內容
 
   - ```html
+      <html>
       <head>
           <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
           <meta charset="utf-8">
@@ -47,11 +48,13 @@ Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https:
             // Viewer code goes here
           </script>
       </body>
+      </html>
       ```
 
 - 2.在 `index.html` 裡引用 Forge Viewer 的 JavaScript 程式庫
 
   - ```html
+    <html>
     <head>
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
         <meta charset="utf-8">
@@ -61,7 +64,7 @@ Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https:
             body {
                 margin: 0;
             }
-    
+
             #forgeViewer {
                 width: 100%;
                 height: 100%;
@@ -72,11 +75,12 @@ Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https:
     </head>
     <body>
         <div id="forgeViewer"></div>
-    
+
         <script>
           // Viewer code goes here
         </script>
     </body>
+    </html>
     ```
 
 - 3.初始化 Viewer
@@ -133,11 +137,11 @@ Forge Viewer 又稱 **L**arge **M**odel **V**iewer，是基於 [three.js](https:
       onDocumentLoadSuccess,
       onDocumentLoadFailure
     );
-    
+
     function onDocumentLoadSuccess(viewerDocument) {
-      	/// Load model code goes here
+      /// Load model code goes here
     }
-    
+
     function onDocumentLoadFailure() {
         console.error('Failed fetching Forge manifest');
     }
