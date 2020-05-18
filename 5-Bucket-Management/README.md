@@ -332,7 +332,7 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
                       label: "delete",
                       action: function () {
                           var treeNode = $('#appBuckets').jstree(true).get_selected(true)[0];
-                          translateObject(treeNode);
+                          deleteObject(treeNode);
                       },
                       icon: 'glyphicon glyphicon-remove'
                   }
@@ -343,19 +343,19 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
       return items;
     }
 
-     function deleteObject(node) {
-      if (node == null) node = $('#appBuckets').jstree(true).get_selected(true)[0];
+    function deleteObject(node) {
+        if (node == null) node = $('#appBuckets').jstree(true).get_selected(true)[0];
 
-      var bucketKey = node.parents[0];
-      var parentNode = $('#appBuckets').jstree(true).get_node(bucketKey);
-      var objectName = node.text;
-      $.ajax({
-        url: '/api/forge/oss/objects/' + objectName,
-        type: 'DELETE',
-        success: function (data) {
-          $('#appBuckets').jstree(true).refresh_node(parentNode);
-        }
-      });
+        var bucketKey = node.parents[0];
+        var parentNode = $('#appBuckets').jstree(true).get_node(bucketKey);
+        var objectName = node.text;
+        $.ajax({
+            url: '/api/forge/oss/' + bucketKey + '/objects/' + objectName,
+            type: 'DELETE',
+            success: function (data) {
+                $('#appBuckets').jstree(true).refresh_node(parentNode);
+            }
+        });
     }
     ```
 
@@ -397,6 +397,184 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
           );
 
           return result;
+      }
+      ```
+
+### 下載已上傳的物件 (模型檔案)
+
+- 前端
+
+  - 目標程式碼
+
+    - ```javascript
+      function autodeskCustomMenu(autodeskNode) {
+        var items;
+
+        switch (autodeskNode.type) {
+
+            // ...
+
+            case "object":
+                items = {
+                    // ...
+
+                    downloadFile: {
+                      label: "download",
+                      action: function () {
+                          var treeNode = $('#appBuckets').jstree(true).get_selected(true)[0];
+                          downloadObject(treeNode);
+                      },
+                      icon: 'glyphicon glyphicon-download-alt'
+                    }
+                };
+                break;
+        }
+
+        return items;
+      }
+
+      function downloadObject(node) {
+          if (node == null) node = $('#appBuckets').jstree(true).get_selected(true)[0];
+
+          var bucketKey = node.parents[0];
+          var parentNode = $('#appBuckets').jstree(true).get_node(bucketKey);
+          var objectName = node.text;
+          $.ajax({
+              url: '/api/forge/oss/' + bucketKey + '/objects/' + objectName + '/download',
+              type: 'GET',
+              dataType: 'binary',
+              processData: false,
+              success: function (blob, textStatus) {
+                  console.log(blob);
+                  console.log(textStatus);
+
+                  if (navigator.msSaveBlob)
+                      return navigator.msSaveBlob(blob, objectName);
+
+                  const url = URL.createObjectURL(blob);
+                  const a = document.createElement('a');
+                  a.style = 'display: none';
+                  document.body.appendChild(a);
+
+                  a.href = url;
+                  a.download = objectName;
+                  a.click();
+                  URL.revokeObjectURL(url);
+                  document.body.removeChild(a);
+              }
+          });
+      }
+      ```
+
+  - 需要針對 jQuery 進行擴充以支援下載檔案
+
+    - ```javascript
+      /**
+      *
+      * jquery.binarytransport.js
+      *
+      * @description. jQuery ajax transport for making binary data type requests.
+      * @version 1.0 
+      * @author Henry Algus <henryalgus@gmail.com>
+      *
+      */
+      // use this transport for "binary" data type
+      $.ajaxTransport("+binary", function(options, originalOptions, jqXHR) {
+          // check for conditions and support for blob / arraybuffer response type
+          if (window.FormData && ((options.dataType && (options.dataType == 'binary')) || (options.data && ((window.ArrayBuffer && options.data instanceof ArrayBuffer) || (window.Blob && options.data instanceof Blob))))) {
+              return {
+                  // create new XMLHttpRequest
+                  send: function(headers, callback) {
+                      // setup all variables
+                      var xhr = new XMLHttpRequest(),
+                          url = options.url,
+                          type = options.type,
+                          async = options.async || true,
+                          // blob or arraybuffer. Default is blob
+                          dataType = options.responseType || "blob",
+                          data = options.data || null,
+                          username = options.username || null,
+                          password = options.password || null;
+
+                      xhr.addEventListener('load', function() {
+                          var data = {};
+                          data[options.dataType] = xhr.response;
+                          // make callback and send data
+                          callback(xhr.status, xhr.statusText, data, xhr.getAllResponseHeaders());
+                      });
+
+                      xhr.open(type, url, async, username, password);
+
+                      // setup custom headers
+                      for (var i in headers) {
+                          xhr.setRequestHeader(i, headers[i]);
+                      }
+
+                      xhr.responseType = dataType;
+                      xhr.send(data);
+                  },
+                  abort: function() {
+                      jqXHR.abort();
+                  }
+              };
+          }
+      ```
+
+- 後端
+
+  - 使用到的 SDK 方法
+
+    - [取得物件 (檔案)的詳細資料](https://github.com/Autodesk-Forge/forge-api-dotnet-client/blob/master/docs/ObjectsApi.md#getobjectdetails)
+
+    - ```c#
+      var objects = new ObjectsApi();
+      objects.Configuration.AccessToken = bearer.access_token;
+
+      dynamic result = objects.GetObjectDetails(
+        "YOUR_BUCKET_NAME",
+        "adsk-forge-helloworld.rvt"
+      );
+      ```
+
+    - [下載物件 (檔案)](https://github.com/Autodesk-Forge/forge-api-dotnet-client/blob/master/docs/ObjectsApi.md#getobject)
+
+      - ```c#
+        var objects = new ObjectsApi();
+        objects.Configuration.AccessToken = bearer.access_token;
+
+        dynamic result = objects.GetObject(
+          "YOUR_BUCKET_NAME",
+          "adsk-forge-helloworld.rvt"
+        );
+        ```
+  
+  - 程式碼內容
+
+    - ```c#
+      /// <summary>
+      /// Download a file from the bucket
+      /// </summary>
+      /// <returns></returns>
+      [HttpGet]
+      [Route("api/forge/oss/{bucketKey}/objects/{objectName}/download")]
+      public async Task<IActionResult> DownloadObject(string bucketKey, string objectName)
+      {
+          // get the bucket...
+          dynamic oauth = await OAuthController.GetInternalAsync();
+          ObjectsApi objects = new ObjectsApi();
+          objects.Configuration.AccessToken = oauth.access_token;
+
+          dynamic details = await objects.GetObjectDetailsAsync(
+            bucketKey,
+            objectName
+          );
+
+          System.IO.Stream result = await objects.GetObjectAsync(
+            details.bucketKey,
+            details.objectKey
+          );
+
+          return File(result, details.contentType, details.objectKey);
       }
       ```
 
