@@ -47,7 +47,8 @@
     - [https://forge.autodesk.com/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-:objectName-PUT/](https://forge.autodesk.com/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-:objectName-PUT/)
     - [https://forge.autodesk.com/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-GET/](https://forge.autodesk.com/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-GET/)
  - **Visual Studio (Windows)** 樣版設定注意事項，請依照紅框處設定
- - ![alt "Visual Studio Windows template setup notice"](img/visual-studio-debug-setup.png)
+ - ![alt "Visual Studio Windows template setup notice"](img/visual-studio-debug-setup-1.png)
+ - ![alt "Visual Studio Windows template setup notice"](img/visual-studio-debug-setup-2.png)
 
 <br/>
 
