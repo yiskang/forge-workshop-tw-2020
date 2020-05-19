@@ -369,7 +369,7 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
         var objects = new ObjectsApi();
         objects.Configuration.AccessToken = bearer.access_token;
 
-        dynamic result = objects.DeleteObject(
+        await objects.DeleteObjectAsync(
           "YOUR_BUCKET_NAME",
           "adsk-forge-helloworld.rvt"
         );
@@ -391,7 +391,7 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
           ObjectsApi objects = new ObjectsApi();
           objects.Configuration.AccessToken = oauth.access_token;
 
-          dynamic result = objects.DeleteObject(
+          await objects.DeleteObjectAsync(
             bucketKey,
             objectName
           );
@@ -480,7 +480,7 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
         var objects = new ObjectsApi();
         objects.Configuration.AccessToken = bearer.access_token;
 
-        dynamic result = objects.GetObjectDetails(
+        dynamic result = await objects.GetObjectDetailsAsync(
           "YOUR_BUCKET_NAME",
           "adsk-forge-helloworld.rvt"
         );
@@ -492,7 +492,7 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
         var objects = new ObjectsApi();
         objects.Configuration.AccessToken = bearer.access_token;
 
-        dynamic result = objects.GetObject(
+        dynamic result = await objects.GetObjectAsync(
           "YOUR_BUCKET_NAME",
           "adsk-forge-helloworld.rvt"
         );
