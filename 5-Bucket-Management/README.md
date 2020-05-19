@@ -396,7 +396,7 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
             objectName
           );
 
-          return result;
+          return StatusCode((int)System.Net.HttpStatusCode.OK);
       }
       ```
 
