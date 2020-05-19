@@ -13,6 +13,8 @@
 
 **Note.** 點擊下面的圖片以開啟 YouTube 影片
 
+[![](http://img.youtube.com/vi/o9kJtL3b4sQ/0.jpg)](http://www.youtube.com/watch?v=o9kJtL3b4sQ "3-forge viewer basic")
+
 ## 參考資料
 
  - [章節講議](README.md)

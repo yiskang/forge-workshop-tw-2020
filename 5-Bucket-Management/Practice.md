@@ -38,6 +38,12 @@
 - 5.Learn Forge 容器樹/物件樹後端功能實作<br/>
   - [![](http://img.youtube.com/vi/WGwIFysJlBg/0.jpg)](http://www.youtube.com/watch?v=WGwIFysJlBg "5.5-Backend Forge bucket tree Implementation")
 
+- 6.Learn Forge 物件樹刪除已上傳檔案之功能實作<br/>
+  - [![](http://img.youtube.com/vi/4DJ7Gv49wsM/0.jpg)](http://www.youtube.com/watch?v=4DJ7Gv49wsM "5.6-Forge bucket object deletion")
+
+- 7.Learn Forge 物件樹下載已上傳檔案之功能實作<br/>
+  - [![](http://img.youtube.com/vi/hDj01Wjn2wk/0.jpg)](http://www.youtube.com/watch?v=hDj01Wjn2wk "5.7-Forge bucket object download")
+
 ## 參考資料
 
  - [章節講議](README.md)
