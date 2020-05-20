@@ -2,7 +2,11 @@
 
 對3/5 Forge 開發基礎專題的實作專題意猶未盡嗎？或是依舊對 Autodesk Forge摸不著頭緒、不知道如何下手呢？本次線上課程將延續『Forge viewer 案例從搭建到部署』實作專題，並為六月份的 Forge 加速器活動做暖身，在兩天的時間內使用 Learn Forge 官方範例，手把手帶大家建個人第一個 Forge Viewer 應用！
 
+## 活動目標及預期成果
 
+活動期間將帶領大家依照 [Learn Forge](https://learnforge.autodesk.io/#/) 的學習路線，並使用 **[ASP.NET Core](https://docs.microsoft.com/zh-tw/aspnet/core/?view=aspnetcore-3.1)** 這個技術一步一步的完成自己的第一個 Forge Viewer 網頁應用程式，最後成果會長的像下圖：
+
+![alt "Website layout"](5-Bucket-Management/img/frontend-layout-setup.png)
 
 ## 活動議程
 
