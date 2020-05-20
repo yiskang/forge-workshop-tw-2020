@@ -2,7 +2,7 @@
 
 ## 練習目標
 
-1. 下載 [Learn Forge .net Core 練習樣版](https://github.com/yiskang/learn-forge-webinar-sample)
+1. 下載 [Learn Forge .net Core 練習樣版](https://github.com/yiskang/learn-forge-webinar-sample/tree/Step1-Empty-Template)
 2. 設定自己的 Forge app `Client ID` 和 `Client Secret` 到練習樣版的環境變數
 
 ## 示範及說明影片
