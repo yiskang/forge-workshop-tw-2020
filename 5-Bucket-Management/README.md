@@ -9,8 +9,6 @@ Learn Forge 前端網頁使用下面這些第三方程式庫來完成頁面配�
 - [jQuery.js](https://jquery.com/)
 - [jstree.js](https://www.jstree.com/)
 
-![alt FrontendLayoutSetup](img/frontend-layout-setup.png)
-
 ## Learn Forge 前端頁面 Layout 簡介
 
 Learn Forge 前端網頁主要可以分為左右兩邊：
@@ -20,7 +18,7 @@ Learn Forge 前端網頁主要可以分為左右兩邊：
 - 右邊：模型檢視器：
   - 透過 Forge Viewer 載入左邊物件數所選的模型視圖
 
-![alt FrontendLayoutIntro](img/frontend-layout-intro.png)
+![alt FrontendLayoutSetup](img/frontend-layout-setup.png)
 
 ### wwwroot/index.html
 
