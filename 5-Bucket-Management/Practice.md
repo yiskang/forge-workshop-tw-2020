@@ -44,6 +44,154 @@
 - 7.Learn Forge 物件樹下載已上傳檔案之功能實作<br/>
   - [![](http://img.youtube.com/vi/hDj01Wjn2wk/0.jpg)](http://www.youtube.com/watch?v=hDj01Wjn2wk "5.7-Forge bucket object download")
 
+## 程式碼補充
+
+### 前端
+
+#### ForgeTree.js
+
+```javascript
+
+$(document).ready(function () {
+    prepareAppBucketTree();
+    $('#refreshBuckets').click(function () {
+        $('#appBuckets').jstree(true).refresh();
+    });
+
+    $('#createNewBucket').click(function () {
+        createNewBucket();
+    });
+
+    $('#createBucketModal').on('shown.bs.modal', function () {
+        $("#newBucketKey").focus();
+    })
+});
+```
+
+### 後端
+
+#### OAuthController.cs
+
+```c#
+using Autodesk.Forge;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
+
+namespace learn_forge_webinar_sample.Controllers
+{
+    [ApiController]
+    public class OAuthController : ControllerBase
+    {
+        // As both internal & public tokens are used for all visitors
+        // we don't need to request a new token on every request, so let's
+        // cache them using static variables. Note we still need to refresh
+        // them after the expires_in time (in seconds)
+        private static dynamic InternalToken { get; set; }
+        private static dynamic PublicToken { get; set; }
+
+        /// <summary>
+        /// Get access token with public (viewables:read) scope
+        /// </summary>
+        [HttpGet]
+        [Route("api/forge/oauth/token")]
+        public async Task<dynamic> GetPublicAsync()
+        {
+            if (PublicToken == null || PublicToken.ExpiresAt < DateTime.UtcNow)
+            {
+                PublicToken = await Get2LeggedTokenAsync(new Scope[] { Scope.ViewablesRead });
+                PublicToken.ExpiresAt = DateTime.UtcNow.AddSeconds(PublicToken.expires_in);
+            }
+            return PublicToken;
+        }
+
+        /// <summary>
+        /// Get access token with internal (write) scope
+        /// </summary>
+        public static async Task<dynamic> GetInternalAsync()
+        {
+            if (InternalToken == null || InternalToken.ExpiresAt < DateTime.UtcNow)
+            {
+                InternalToken = await Get2LeggedTokenAsync(new Scope[] { Scope.BucketCreate, Scope.BucketRead, Scope.BucketDelete, Scope.DataRead, Scope.DataWrite, Scope.DataCreate, Scope.CodeAll });
+                InternalToken.ExpiresAt = DateTime.UtcNow.AddSeconds(InternalToken.expires_in);
+            }
+
+            return InternalToken;
+        }
+
+        /// <summary>
+        /// Get the access token from Autodesk
+        /// </summary>
+        private static async Task<dynamic> Get2LeggedTokenAsync(Scope[] scopes)
+        {
+            TwoLeggedApi oauth = new TwoLeggedApi();
+            string grantType = "client_credentials";
+            dynamic bearer = await oauth.AuthenticateAsync(
+              GetAppSetting("FORGE_CLIENT_ID"),
+              GetAppSetting("FORGE_CLIENT_SECRET"),
+              grantType,
+              scopes);
+            return bearer;
+        }
+
+        /// <summary>
+        /// Reads appsettings from web.config
+        /// </summary>
+        public static string GetAppSetting(string settingKey)
+        {
+            return Environment.GetEnvironmentVariable(settingKey);
+        }
+    }
+}
+```
+
+#### OSSController.cs
+
+```c#
+using Autodesk.Forge;
+using Autodesk.Forge.Model;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
+
+namespace learn_forge_webinar_sample.Controllers
+{
+    [ApiController]
+    public class OSSController : ControllerBase
+    {
+        private IWebHostEnvironment _env;
+        public OSSController(IWebHostEnvironment env) { _env = env; }
+        public string ClientId { get { return OAuthController.GetAppSetting("FORGE_CLIENT_ID").ToLower(); } }
+
+        /// <summary>
+        /// Input model for CreateBucket method
+        /// </summary>
+        public class CreateBucketModel
+        {
+            public string bucketKey { get; set; }
+        }
+
+        public class UploadFile
+        {
+            public string bucketKey { get; set; }
+            public IFormFile fileToUpload { get; set; }
+        }
+
+        /// <summary>
+        /// Base64 enconde a string
+        /// </summary>
+        public static string Base64Encode(string plainText)
+        {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+            return System.Convert.ToBase64String(plainTextBytes);
+        }
+    }
+}
+```
+
 ## 參考資料
 
  - [章節講議](README.md)

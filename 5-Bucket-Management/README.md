@@ -364,6 +364,10 @@ body {
 
       return items;
     }
+
+    function uploadFile() {
+        $('#hiddenUploadField').click();
+    }
     ```
 
 - 後端
