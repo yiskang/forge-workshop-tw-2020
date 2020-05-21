@@ -42,7 +42,7 @@
   - [![](http://img.youtube.com/vi/4DJ7Gv49wsM/0.jpg)](http://www.youtube.com/watch?v=4DJ7Gv49wsM "5.6-Forge bucket object deletion")
 
 - 7.Learn Forge 物件樹下載已上傳檔案之功能實作<br/>
-  - [![](http://img.youtube.com/vi/hDj01Wjn2wk/0.jpg)](http://www.youtube.com/watch?v=hDj01Wjn2wk "5.7-Forge bucket object download")
+  - [![](http://img.youtube.com/vi/hDj01Wjn2wk/0.jpg)](http://www.youtube.com/watch?v=hDj01Wjn2wk "5.7-Forge bucket object download")
 
 ## 程式碼補充
 
