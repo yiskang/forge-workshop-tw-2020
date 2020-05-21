@@ -21,6 +21,35 @@
         },
       });
     }
+
+    function autodeskCustomMenu(autodeskNode) {
+      var items;
+
+      switch (autodeskNode.type) {
+
+          // ... 添加 translateFile 的部份
+
+          case "object":
+            items = {
+
+                // ... 
+
+                translateFile: {
+                    label: "Translate",
+                    action: function () {
+                        var treeNode = $('#appBuckets').jstree(true).get_selected(true)[0];
+                        translateObject(treeNode);
+                    },
+                    icon: 'glyphicon glyphicon-eye-open'
+                },
+
+                // ...
+            };
+            break;
+      }
+
+      return items;
+    }
     ```
 
 - 後端
@@ -77,8 +106,11 @@
 
 - 前端
   
+  - 在  `$('#appBuckets').jstree( // ... )` 加上下面的 `.bind` 方法
   - ```javascript
-    $('#appBuckets').jstree().bind("activate_node.jstree", function (evt, data) {
+    $('#appBuckets').jstree(
+      // ...
+    ).bind("activate_node.jstree", function (evt, data) {
         if (data != null && data.node != null && data.node.type == 'object') {
           $("#forgeViewer").empty();
           var urn = data.node.id;
@@ -100,32 +132,6 @@
           })
         }
       });
-
-      function autodeskCustomMenu(autodeskNode) {
-      var items;
-
-      switch (autodeskNode.type) {
-
-          // ...
-
-          case "object":
-            items = {
-                translateFile: {
-                    label: "Translate",
-                    action: function () {
-                        var treeNode = $('#appBuckets').jstree(true).get_selected(true)[0];
-                        translateObject(treeNode);
-                    },
-                    icon: 'glyphicon glyphicon-eye-open'
-                },
-
-                // ...
-            };
-            break;
-      }
-
-      return items;
-    }
     ```
 
 ## 章節自主練習

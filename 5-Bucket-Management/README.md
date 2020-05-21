@@ -440,7 +440,7 @@ body {
 
       switch (autodeskNode.type) {
 
-          // ...
+          // ... 添加 deleteFile 的部份
 
           case "object":
               items = {
@@ -528,10 +528,11 @@ body {
 
         switch (autodeskNode.type) {
 
-            // ...
+            // ... 添加 downloadFile 的部份
 
             case "object":
                 items = {
+
                     // ...
 
                     downloadFile: {
