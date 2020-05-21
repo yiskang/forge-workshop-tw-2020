@@ -19,6 +19,36 @@
 - 2.Learn Forge 模型轉檔及轉檔進度查詢後端功能實作<br/>
   - [![](http://img.youtube.com/vi/uf3esry6b-k/0.jpg)](http://www.youtube.com/watch?v=uf3esry6b-k "6.2-Backend Model Translation and Progess Check")
 
+## 程式碼補充
+
+### 後端
+
+#### ModelDerivativeController.cs
+
+```C#
+using Autodesk.Forge;
+using Autodesk.Forge.Model;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace learn_forge_webinar_sample.Controllers
+{
+    [ApiController]
+    public class ModelDerivativeController : ControllerBase
+    {
+        /// <summary>
+        /// Model for TranslateObject method
+        /// </summary>
+        public class TranslateObjectModel
+        {
+            public string bucketKey { get; set; }
+            public string objectName { get; set; }
+        }
+    }
+}
+```
+
 ## 參考資料
 
  - [章節講議](README.md)
