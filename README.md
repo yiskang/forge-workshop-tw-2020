@@ -267,45 +267,6 @@
 				<p>-</p>
 			</td>
 		</tr>
-		<tr>
-			<td width="150">
-				<p>16:00-16:10</p>
-			</td>
-			<td width="293">
-				<p>章節六：</p>
-				<p>l&nbsp;&nbsp; Forge Model Derivative - 模型轉檔</p>
-			</td>
-			<td width="189">
-				<p>講師簡報導說(<a href="6-Model-Translation">講議連結</a>)</p>
-			</td>
-		</tr>
-		<tr>
-			<td width="150">
-				<p>16:10-17:00</p>
-			</td>
-			<td width="293">
-				<p>章節六自我學習</p>
-			</td>
-			<td width="189">
-				<ul>
-					<li>提供示範影片自學</li>
-					<li>隨時Slack發問</li>
-					<li>需要時可Zoom視訊答疑</li>
-					<li><a class="self-practice" href="6-Model-Translation/Practice.md">自主練習連結</a></li>
-				</ul>
-			</td>
-		</tr>
-		<tr>
-			<td width="150">
-				<p>17:00-17:10</p>
-			</td>
-			<td width="293">
-				<p>章節六答疑</p>
-			</td>
-			<td width="189">
-				<p>Zoom答疑</p>
-			</td>
-		</tr>
 	</tbody>
 </table>
 
@@ -327,7 +288,57 @@
 		</tr>
 		<tr>
 			<td width="150">
-				<p>09:00 – 09:20</p>
+				<p>09:00-09:20</p>
+			</td>
+			<td width="293">
+				<p>章節六：</p>
+				<p>l&nbsp;&nbsp; Forge Model Derivative - 模型轉檔</p>
+			</td>
+			<td width="189">
+				<p>講師簡報導說(<a href="6-Model-Translation">講議連結</a>)</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="150">
+				<p>09:20-10:10</p>
+			</td>
+			<td width="293">
+				<p>章節六自我學習</p>
+			</td>
+			<td width="189">
+				<ul>
+					<li>提供示範影片自學</li>
+					<li>隨時Slack發問</li>
+					<li>需要時可Zoom視訊答疑</li>
+					<li><a class="self-practice" href="6-Model-Translation/Practice.md">自主練習連結</a></li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td width="150">
+				<p>10:10-10:20</p>
+			</td>
+			<td width="293">
+				<p>章節六答疑</p>
+			</td>
+			<td width="189">
+				<p>Zoom答疑</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="150">
+				<p>10:20 – 10:30</p>
+			</td>
+			<td width="293">
+				<p>中場休息</p>
+			</td>
+			<td width="189">
+				<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="150">
+				<p>10:30 – 10:40</p>
 			</td>
 			<td width="293">
 				<p>章節七：</p>
@@ -339,7 +350,7 @@
 		</tr>
 		<tr>
 			<td width="150">
-				<p>09:20-10:20</p>
+				<p>10:40-11:50</p>
 			</td>
 			<td width="293">
 				<p>章節七自我學習</p>
@@ -355,44 +366,10 @@
 		</tr>
 		<tr>
 			<td width="150">
-				<p>10:20-10:30</p>
-			</td>
-			<td width="293">
-				<p>章節七答疑</p>
-			</td>
-			<td width="189">
-				<p>Zoom答疑</p>
-			</td>
-		</tr>
-		<tr>
-			<td width="150">
-				<p>10:30-10:40</p>
-			</td>
-			<td width="293">
-				<p>中場休息</p>
-			</td>
-			<td width="189">
-				<p>-</p>
-			</td>
-		</tr>
-		<tr>
-			<td width="150">
-				<p>10:40-11:50</p>
-			</td>
-			<td width="293">
-				<p>章節八：</p>
-				<p>l   Forge Viewer 功能及API示範</p>
-			</td>
-			<td width="189">
-				<p>講師簡報導說，並讓學員跟著講師練習(<a href="8-Viewer-APIs">講議連結</a>)</p>
-			</td>
-		</tr>
-		<tr>
-			<td width="150">
 				<p>11:50-12:00</p>
 			</td>
 			<td width="293">
-				<p>章節八答疑</p>
+				<p>章節七答疑</p>
 			</td>
 			<td width="189">
 				<p>Zoom答疑</p>
@@ -411,7 +388,41 @@
 		</tr>
 		<tr>
 			<td width="150">
-				<p>14:00-16:00</p>
+				<p>14:00-15:50</p>
+			</td>
+			<td width="293">
+				<p>章節八：</p>
+				<p>l   Forge Viewer 功能及API示範</p>
+			</td>
+			<td width="189">
+				<p>講師簡報導說，並讓學員跟著講師練習(<a href="8-Viewer-APIs">講議連結</a>)</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="150">
+				<p>15:50-16:00</p>
+			</td>
+			<td width="293">
+				<p>章節八答疑</p>
+			</td>
+			<td width="189">
+				<p>Zoom答疑</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="150">
+				<p>16:00-16:10</p>
+			</td>
+			<td width="293">
+				<p>中場休息</p>
+			</td>
+			<td width="189">
+				<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="150">
+				<p>16:10-17:10</p>
 			</td>
 			<td width="293">
 				<p>Forge 應用需求的技術討論和程式碼分析</p>
