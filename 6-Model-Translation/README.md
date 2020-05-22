@@ -32,7 +32,7 @@
           case "object":
             items = {
 
-                // ... 
+                // ...
 
                 translateFile: {
                     label: "Translate",
@@ -132,6 +132,14 @@
           })
         }
       });
+
+      function getForgeToken(callback) {
+        fetch('/api/forge/oauth/token').then(res => {
+            res.json().then(data => {
+                callback(data.access_token, data.expires_in);
+            });
+        });
+      }
     ```
 
 ## 章節自主練習
