@@ -1,4 +1,6 @@
-# Autodesk Forge基礎訓練工作坊
+# Deprecated 
+
+## Autodesk Forge基礎訓練工作坊
 
 對3/5 Forge 開發基礎專題的實作專題意猶未盡嗎？或是依舊對 Autodesk Forge摸不著頭緒、不知道如何下手呢？本次線上課程將延續『Forge viewer 案例從搭建到部署』實作專題，並為六月份的 Forge 加速器活動做暖身，在兩天的時間內使用 Learn Forge 官方範例，手把手帶大家建個人第一個 Forge Viewer 應用！
 
